@@ -1,0 +1,2183 @@
+/* =========================================================
+   NASPRO LANDING — CSS consolidado
+   Hijo de Astra · Plantilla Naspro Landing
+   ========================================================= */
+
+/* ─────────────────────────────────────────────────────────
+   1. VARIABLES DE MARCA (unificadas)
+   ───────────────────────────────────────────────────────── */
+:root {
+  /* Cian / azul de marca */
+  --naspro-cyan:        #00AEEF;
+  --naspro-cyan-soft:   #29C3F2;
+  --naspro-ice:         #D6E8FF;
+  --naspro-sky:         #cfefff;
+  --naspro-deep:        #0e2a3a;
+
+  /* Fondos oscuros */
+  --naspro-bg-1:        #0d1b2a;
+  --naspro-bg-2:        #102a3a;
+  --naspro-bg-3:        #0f1f2d;
+  --naspro-bg-4:        #0c1826;
+
+  /* Fondos about */
+  --naspro-about-bg-1:  #0b1624;
+  --naspro-about-bg-2:  #0f2030;
+  --naspro-about-bg-3:  #0a1422;
+
+  /* Borders / separadores */
+  --naspro-stroke:      rgba(214, 232, 255, 0.14);
+  --naspro-stroke-2:    rgba(214, 232, 255, 0.10);
+
+  /* Texto */
+  --naspro-text-soft:   rgba(255, 255, 255, 0.78);
+  --naspro-text-muted:  rgba(255, 255, 255, 0.70);
+}
+
+/* ─────────────────────────────────────────────────────────
+   2. RESET MÍNIMO (solo dentro de la landing)
+   ───────────────────────────────────────────────────────── */
+#naspro-landing *,
+#naspro-landing *::before,
+#naspro-landing *::after {
+  box-sizing: border-box;
+}
+
+.naspro-landing-body {
+  margin: 0;
+  padding: 0;
+  background: var(--naspro-bg-4);
+}
+
+
+/* =========================================================
+   3. HERO
+   ========================================================= */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  overflow: hidden;
+  padding: 20px;
+}
+
+.hero .bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    radial-gradient(1200px 600px at 70% 10%, rgba(0, 174, 239, 0.22), transparent 60%),
+    linear-gradient(120deg,
+      var(--naspro-bg-1),
+      var(--naspro-bg-2) 35%,
+      var(--naspro-bg-3) 70%,
+      var(--naspro-bg-4));
+  animation: naspro-bgShift 14s ease-in-out infinite alternate;
+}
+@keyframes naspro-bgShift {
+  0%   { filter: hue-rotate(0deg)  brightness(1); }
+  100% { filter: hue-rotate(-8deg) brightness(1.05); }
+}
+
+.hero .overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.65));
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 72px;
+  opacity: 0;
+  animation: naspro-fadeUp 0.9s ease-out forwards;
+}
+@keyframes naspro-fadeUp {
+  from { transform: translateY(24px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+.hero .logo {
+  width: clamp(260px, 28vw, 420px);
+  height: auto;
+  margin: 0 auto clamp(28px, 3vw, 48px);
+  animation: naspro-breatheGlow 3.5s ease-in-out infinite;
+  transition: transform 0.3s ease, filter 0.35s ease;
+  filter:
+    drop-shadow(0 0 14px rgba(0, 174, 239, 0.55))
+    drop-shadow(0 0 28px rgba(0, 174, 239, 0.35));
+}
+.hero .logo:hover {
+  transform: scale(1.06);
+  filter:
+    drop-shadow(0 0 22px rgba(0, 174, 239, 0.90))
+    drop-shadow(0 0 42px rgba(0, 174, 239, 0.60));
+}
+@keyframes naspro-breatheGlow {
+  0%, 100% {
+    filter:
+      drop-shadow(0 0 14px rgba(0, 174, 239, 0.55))
+      drop-shadow(0 0 28px rgba(0, 174, 239, 0.35));
+  }
+  50% {
+    filter:
+      drop-shadow(0 0 18px rgba(0, 174, 239, 0.70))
+      drop-shadow(0 0 36px rgba(0, 174, 239, 0.45));
+  }
+}
+
+.hero .brand {
+  font-family: 'Poppins', system-ui, sans-serif;
+  font-size: clamp(16px, 2vw, 22px);
+  font-weight: 500;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--naspro-sky);
+  margin: -10px 0 18px;
+  text-shadow:
+    0 0 8px  rgba(0, 174, 239, 0.45),
+    0 0 20px rgba(0, 174, 239, 0.25),
+    0 0 40px rgba(0, 174, 239, 0.15);
+}
+
+.hero h1 {
+  font-family: 'Bebas Neue', system-ui, sans-serif;
+  font-size: clamp(36px, 7vw, 96px);
+  line-height: 1.02;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin: 25px 0;
+  background: linear-gradient(90deg, var(--naspro-cyan) 0%, var(--naspro-ice) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  filter: drop-shadow(0 0 8px rgba(0, 174, 239, 0.25));
+}
+
+.hero p {
+  font-family: 'Poppins', system-ui, sans-serif;
+  font-size: clamp(16px, 2.2vw, 22px);
+  font-weight: 300;
+  letter-spacing: 0.3px;
+  color: var(--naspro-text-soft);
+  margin: 0 0 10px;
+}
+
+.hero .btn {
+  display: inline-block;
+  padding: 14px 40px;
+  margin-top: 10px;
+  font-size: 18px;
+  border: 2px solid transparent;
+  border-radius: 40px;
+  background: linear-gradient(90deg, var(--naspro-cyan), var(--naspro-ice));
+  color: var(--naspro-deep);
+  text-decoration: none;
+  box-shadow: 0 6px 22px rgba(0, 174, 239, 0.28);
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+.hero .btn:hover {
+  transform: scale(1.05);
+  background: transparent;
+  color: var(--naspro-cyan);
+  border-color: var(--naspro-cyan);
+  box-shadow: 0 6px 26px rgba(0, 174, 239, 0.45);
+}
+
+
+/* =========================================================
+   4. MENÚ FLOTANTE GLOBAL
+   ========================================================= */
+.naspro-burger {
+  position: fixed;
+  top: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(1140px, calc(100% - 40px));
+  z-index: 99999;
+  pointer-events: none;
+  display: flex;
+  justify-content: flex-end;
+}
+.naspro-burger__btn {
+  all: unset;
+  pointer-events: auto;
+  width: 46px;
+  height: 46px;
+  border-radius: 999px;
+  border: 1px solid rgba(214, 232, 255, 0.18);
+  background: rgba(11, 22, 36, 0.45);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.45);
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+}
+.naspro-burger__icon {
+  width: 22px;
+  height: 22px;
+  display: block;
+  opacity: 0.95;
+  filter: drop-shadow(0 0 10px rgba(0, 174, 239, 0.18));
+  transition: transform 0.18s ease;
+  pointer-events: none;
+}
+.naspro-burger__btn:hover .naspro-burger__icon {
+  transform: scale(1.05);
+}
+
+body.naspro-menu-open .naspro-burger {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease;
+}
+
+.naspro-drawer {
+  position: fixed;
+  inset: 0;
+  z-index: 99998;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.22s ease;
+}
+.naspro-drawer.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+.naspro-drawer__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
+.naspro-drawer__panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: min(360px, 86vw);
+  padding: 68px 18px 22px;
+  background: linear-gradient(180deg, rgba(11, 22, 36, 0.92), rgba(10, 20, 34, 0.96));
+  border-left: 1px solid var(--naspro-stroke);
+  box-shadow: -24px 0 60px rgba(0, 0, 0, 0.55);
+  transform: translateX(12px);
+  transition: transform 0.22s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.naspro-drawer.is-open .naspro-drawer__panel {
+  transform: translateX(0);
+}
+.naspro-drawer__close {
+  all: unset;
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  border: 1px solid rgba(214, 232, 255, 0.16);
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(214, 232, 255, 0.92);
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  font-size: 22px;
+  line-height: 1;
+}
+.naspro-drawer__brand {
+  font-family: 'Poppins', system-ui, sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: rgba(214, 232, 255, 0.85);
+  margin: 0 0 10px;
+}
+.naspro-drawer__panel a {
+  font-family: 'Poppins', system-ui, sans-serif;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.88);
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid var(--naspro-stroke-2);
+  background: rgba(255, 255, 255, 0.04);
+  transition: transform 0.18s ease, background 0.18s ease;
+}
+.naspro-drawer__panel a:hover {
+  transform: translateX(-2px);
+  background: rgba(255, 255, 255, 0.06);
+}
+.naspro-drawer__panel a.naspro-drawer__cta {
+  margin-top: 8px;
+  text-align: center;
+  background: linear-gradient(90deg, var(--naspro-cyan-soft), var(--naspro-ice));
+  color: var(--naspro-deep);
+  border: 1px solid rgba(214, 232, 255, 0.18);
+  box-shadow: 0 12px 28px rgba(0, 174, 239, 0.22);
+}
+.naspro-drawer__panel a.naspro-drawer__cta:hover {
+  transform: none;
+}
+/* =========================================================
+   5. SECCIÓN CAPAS (#capas)
+   Cerrado: 4 capas apiladas en el centro (animación respiración).
+   Abierto: layout editorial horizontal con info al lado.
+   Móvil: layout estático vertical (sección 16).
+   ========================================================= */
+
+#capas {
+  background: var(--naspro-bg-4);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(80px, 10vw, 140px) clamp(20px, 4vw, 60px);
+  font-family: 'Poppins', system-ui, sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+#capas .nx-bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(800px 500px at 50% 50%, rgba(0, 174, 239, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* Cabecera */
+#capas .nx-header {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  margin-bottom: clamp(40px, 5vw, 60px);
+  max-width: 800px;
+}
+#capas .nx-eyebrow {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--naspro-cyan-soft);
+  opacity: 0.85;
+  display: block;
+  margin-bottom: 14px;
+}
+#capas .nx-title {
+  font-family: 'Bebas Neue', system-ui, sans-serif;
+  font-size: clamp(36px, 6vw, 72px);
+  line-height: 1.02;
+  margin: 0;
+  background: linear-gradient(90deg, var(--naspro-cyan) 0%, var(--naspro-ice) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 700;
+  filter: drop-shadow(0 0 12px rgba(0, 174, 239, 0.25));
+}
+#capas .nx-sub {
+  font-size: 14px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.5);
+  margin-top: 16px;
+  letter-spacing: 0.02em;
+}
+
+
+/* ─── ESCENA: contenedor principal ────────── */
+#capas .nx-scene {
+  position: relative;
+  width: 100%;
+  max-width: 1100px;
+  z-index: 2;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  transition: gap 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  gap: 0; /* cerrado: sin gap (apiladas) */
+}
+
+/* Cuando se abre, gap entre filas */
+#capas .nx-scene.is-open {
+  gap: clamp(40px, 5vw, 80px);
+}
+
+
+/* ─── CADA FILA / CAPA ────────────────────────── */
+#capas .nx-row {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  transition: all 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ESTADO CERRADO: 4 capas apiladas en el centro */
+#capas .nx-scene:not(.is-open) .nx-row {
+  flex-direction: column;
+  justify-content: center;
+  margin: -60px auto 0; /* cada capa solapa con la anterior */
+  width: 360px;
+}
+#capas .nx-scene:not(.is-open) .nx-row:first-child {
+  margin-top: 0;
+}
+
+/* En CERRADO ocultamos el texto (.nx-tag) y el bignum */
+#capas .nx-scene:not(.is-open) .nx-tag,
+#capas .nx-scene:not(.is-open) .nx-bignum {
+  display: none;
+}
+
+/* Imagen apilada en cerrado: animación de respiración */
+#capas .nx-scene:not(.is-open) .nx-img-wrap {
+  width: 280px;
+  height: 180px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: nxBreathe 4s ease-in-out infinite;
+}
+@keyframes nxBreathe {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-4px); }
+}
+
+#capas .nx-scene:not(.is-open) .nx-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  filter: brightness(1.2) drop-shadow(0 8px 18px rgba(0, 174, 239, 0.25));
+}
+
+
+/* ESTADO ABIERTO: layout horizontal con info al lado ──── */
+#capas .nx-scene.is-open .nx-row {
+  flex-direction: row;
+  align-items: center;
+  gap: clamp(30px, 5vw, 80px);
+  margin: 0;
+  width: 100%;
+  padding: clamp(20px, 3vw, 40px) clamp(20px, 3vw, 40px);
+  border-radius: 18px;
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.025) 0%, rgba(255, 255, 255, 0.005) 100%);
+  border: 1px solid rgba(214, 232, 255, 0.06);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* Imagen GRANDE a la izquierda */
+#capas .nx-scene.is-open .nx-img-wrap {
+  flex: 0 0 280px;
+  width: 280px;
+  height: 220px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: none;
+}
+
+/* Glow detrás de la imagen */
+#capas .nx-scene.is-open .nx-img-wrap::after {
+  content: '';
+  position: absolute;
+  inset: 5%;
+  background: radial-gradient(ellipse at center, rgba(0, 174, 239, 0.3) 0%, transparent 70%);
+  filter: blur(30px);
+  z-index: -1;
+  pointer-events: none;
+}
+
+#capas .nx-scene.is-open .nx-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  filter: brightness(1.25) drop-shadow(0 12px 25px rgba(0, 0, 0, 0.4));
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+
+/* Tag (info a la derecha) */
+#capas .nx-scene.is-open .nx-tag {
+  flex: 1;
+  position: relative;
+  padding: 0;
+  border: none;
+  text-align: left;
+  display: block;
+  opacity: 1;
+  pointer-events: auto;
+  transform: none;
+}
+
+/* NÚMERO GIGANTE marca de agua detrás del título */
+#capas .nx-scene.is-open .nx-bignum {
+  position: absolute;
+  top: -30px;
+  left: -10px;
+  font-family: 'Bebas Neue', system-ui, sans-serif;
+  font-size: clamp(140px, 14vw, 200px);
+  line-height: 0.85;
+  letter-spacing: -0.03em;
+  color: rgba(255, 255, 255, 0.04);
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+  font-weight: 700;
+  display: block;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+#capas .nx-scene.is-open .nx-tag__num {
+  display: block;
+  position: relative;
+  z-index: 1;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.32em;
+  color: var(--naspro-cyan-soft);
+  margin-bottom: 12px;
+}
+
+#capas .nx-scene.is-open .nx-tag h4 {
+  position: relative;
+  z-index: 1;
+  font-family: 'Poppins', system-ui, sans-serif;
+  font-size: clamp(18px, 2vw, 26px);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--naspro-ice);
+  margin: 0 0 16px;
+  line-height: 1.2;
+}
+
+#capas .nx-scene.is-open .nx-tag p {
+  position: relative;
+  z-index: 1;
+  font-family: 'Poppins', system-ui, sans-serif;
+  font-size: clamp(14px, 1.1vw, 16px);
+  font-weight: 300;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.75);
+  margin: 0;
+  max-width: 520px;
+}
+
+
+/* ─── BOTÓN ABRIR/CERRAR ────────────────── */
+#capas .nx-btn-wrap {
+  position: relative;
+  z-index: 2;
+  margin-top: clamp(40px, 5vw, 60px);
+}
+#capas .nx-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 32px;
+  border-radius: 40px;
+  border: 1px solid rgba(0, 174, 239, 0.4);
+  background: rgba(0, 174, 239, 0.08);
+  color: var(--naspro-cyan-soft);
+  font-family: 'Poppins', system-ui, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, transform 0.15s;
+  outline: none;
+}
+#capas .nx-btn:hover {
+  background: rgba(0, 174, 239, 0.16);
+  border-color: rgba(0, 174, 239, 0.65);
+}
+#capas .nx-btn:active {
+  transform: scale(0.97);
+}
+#capas .nx-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--naspro-cyan-soft);
+  opacity: 0.45;
+  transition: opacity 0.3s, box-shadow 0.3s;
+}
+#capas .nx-dot.on {
+  opacity: 1;
+  box-shadow: 0 0 8px rgba(0, 174, 239, 0.8);
+}
+
+
+/* ─── ANIMACIÓN CASCADA AL ABRIR ────────── */
+@media (min-width: 641px) {
+  #capas .nx-scene.is-open .nx-row {
+    animation: nxFadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+  }
+  #capas .nx-scene.is-open #row1 { animation-delay: 0.05s; }
+  #capas .nx-scene.is-open #row2 { animation-delay: 0.25s; }
+  #capas .nx-scene.is-open #row3 { animation-delay: 0.45s; }
+  #capas .nx-scene.is-open #row4 { animation-delay: 0.65s; }
+}
+@keyframes nxFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* ─── HOVER: número gigante se ilumina cyan ────── */
+@media (min-width: 1025px) {
+  #capas .nx-scene.is-open .nx-row:hover .nx-bignum {
+    color: rgba(0, 174, 239, 0.95);
+    text-shadow:
+      0 0 25px rgba(0, 174, 239, 0.7),
+      0 0 60px rgba(0, 174, 239, 0.4);
+  }
+
+  #capas .nx-scene.is-open .nx-row:hover .nx-img-wrap img {
+    transform: scale(1.06);
+    filter: brightness(1.4) drop-shadow(0 15px 30px rgba(0, 174, 239, 0.45));
+  }
+
+  #capas .nx-scene.is-open .nx-row:hover .nx-img-wrap::after {
+    background: radial-gradient(ellipse at center, rgba(0, 174, 239, 0.5) 0%, transparent 70%);
+    transition: background 0.3s ease;
+  }
+}
+/* =========================================================
+   6. SECCIÓN ABOUT (#about-naspro)
+   ========================================================= */
+#about-naspro {
+  position: relative;
+  width: 100%;
+  padding: clamp(80px, 10vw, 140px) 0;
+  color: var(--naspro-ice);
+  overflow: hidden;
+  isolation: isolate;
+}
+#about-naspro .ab-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(1000px 560px at 12% 20%, rgba(41,195,242,.18), transparent 58%),
+    radial-gradient(860px 500px at 88% 18%, rgba(214,232,255,.10), transparent 60%),
+    radial-gradient(600px 400px at 50% 85%, rgba(0,174,239,.08), transparent 65%),
+    linear-gradient(180deg, var(--naspro-about-bg-1) 0%, var(--naspro-about-bg-2) 55%, var(--naspro-about-bg-3) 100%);
+  z-index: -1;
+  animation: abBg 16s ease-in-out infinite alternate;
+}
+@keyframes abBg {
+  0%   { filter: hue-rotate(0deg) brightness(1); }
+  100% { filter: hue-rotate(-8deg) brightness(1.06); }
+}
+#about-naspro::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 5%, rgba(41,195,242,.35) 35%, rgba(214,232,255,.25) 65%, transparent 95%);
+}
+#about-naspro::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 5%, rgba(214,232,255,.18) 50%, transparent 95%);
+}
+#about-naspro .ab-wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 4vw, 60px);
+}
+#about-naspro .ab-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Poppins', system-ui, sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  color: var(--naspro-cyan-soft);
+  margin-bottom: 20px;
+  opacity: .85;
+}
+#about-naspro .ab-eyebrow::before {
+  content: '';
+  display: block;
+  width: 28px; height: 1px;
+  background: var(--naspro-cyan-soft);
+  opacity: .6;
+}
+#about-naspro .ab-hero {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: clamp(32px, 5vw, 72px);
+  align-items: center;
+  margin-bottom: clamp(56px, 8vw, 100px);
+}
+#about-naspro .ab-copy { max-width: 580px; }
+#about-naspro .ab-title {
+  font-family: 'Bebas Neue', system-ui, sans-serif;
+  font-size: clamp(42px, 6.5vw, 88px);
+  line-height: .96;
+  letter-spacing: .02em;
+  margin: 0 0 22px;
+  background: linear-gradient(100deg, var(--naspro-cyan-soft) 0%, var(--naspro-ice) 60%, rgba(255,255,255,.9) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  filter: drop-shadow(0 0 10px rgba(0,174,239,.22));
+}
+#about-naspro .ab-title em {
+  font-style: normal;
+  background: linear-gradient(90deg, var(--naspro-ice) 0%, var(--naspro-cyan-soft) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+#about-naspro .ab-lead {
+  font-family: 'Poppins', system-ui, sans-serif;
+  font-size: clamp(15px, 1.4vw, 18px);
+  line-height: 1.8;
+  color: var(--naspro-text-muted);
+  margin: 0 0 32px;
+  font-weight: 300;
+}
+#about-naspro .ab-stats {
+  display: flex;
+  gap: clamp(24px, 3.5vw, 48px);
+  margin-bottom: 36px;
+  flex-wrap: wrap;
+}
+#about-naspro .ab-stat__num {
+  display: block;
+  font-family: 'Bebas Neue', system-ui, sans-serif;
+  font-size: clamp(32px, 3.5vw, 46px);
+  line-height: 1;
+  background: linear-gradient(90deg, var(--naspro-cyan-soft), var(--naspro-ice));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  letter-spacing: .02em;
+}
+#about-naspro .ab-stat__label {
+  display: block;
+  font-family: 'Poppins', system-ui, sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.45);
+  margin-top: 2px;
+}
+#about-naspro .ab-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 32px;
+  border-radius: 999px;
+  font-family: 'Poppins', system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: .04em;
+  color: #0b1a2b;
+  text-decoration: none;
+  background: linear-gradient(90deg, var(--naspro-cyan-soft), var(--naspro-ice));
+  box-shadow: 0 10px 36px rgba(0,174,239,.22), inset 0 1px 0 rgba(255,255,255,.25);
+  transition: transform .22s ease, box-shadow .22s ease;
+}
+#about-naspro .ab-cta:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 16px 44px rgba(0,174,239,.34);
+}
+#about-naspro .ab-visual {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#about-naspro .ab-glow {
+  position: absolute;
+  top: -10%; right: -8%;
+  width: 55%; height: 55%;
+  background: radial-gradient(ellipse, rgba(0,174,239,.28), transparent 70%);
+  mix-blend-mode: screen;
+  filter: blur(40px);
+  pointer-events: none;
+  animation: glowDrift 5s ease-in-out infinite alternate;
+  z-index: 0;
+}
+@keyframes glowDrift {
+  0%   { transform: translateY(0) scale(1); opacity: .55; }
+  100% { transform: translateY(-10px) scale(1.05); opacity: .75; }
+}
+#about-naspro .ab-showcase {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 380px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 40px;
+}
+#about-naspro .ab-showcase__index {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 28px;
+  font-family: 'Poppins', system-ui, sans-serif;
+  font-size: 10px;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+#about-naspro .ab-idx-num {
+  font-family: 'Bebas Neue', system-ui, sans-serif;
+  font-size: 26px;
+  line-height: 1;
+  letter-spacing: 0;
+  color: var(--naspro-cyan-soft);
+  font-weight: 400;
+  transition: color .35s ease;
+}
+#about-naspro .ab-idx-line {
+  width: 40px;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(41,195,242,.7), rgba(41,195,242,.0));
+}
+#about-naspro .ab-idx-label {
+  color: rgba(214,232,255,.85);
+  font-weight: 500;
+  letter-spacing: .28em;
+  transition: color .35s ease;
+}
+#about-naspro .ab-deck {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 0.78;
+  max-width: 340px;
+  perspective: 1600px;
+  margin-bottom: 26px;
+}
+#about-naspro .ab-card-photo {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #fafbfc;
+  cursor: pointer;
+  transform-origin: 50% 100%;
+  transition:
+    transform .75s cubic-bezier(.2,.85,.25,1),
+    opacity .5s ease,
+    filter .5s ease,
+    box-shadow .45s ease;
+  will-change: transform, opacity, filter;
+  box-shadow:
+    0 32px 70px rgba(0,0,0,.55),
+    0 12px 28px rgba(0,0,0,.30),
+    0 0 0 1px rgba(214,232,255,.08);
+  outline: none;
+}
+#about-naspro .ab-card-photo:focus-visible {
+  box-shadow:
+    0 32px 70px rgba(0,0,0,.55),
+    0 12px 28px rgba(0,0,0,.30),
+    0 0 0 2px var(--naspro-cyan-soft);
+}
+#about-naspro .ab-card-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  -webkit-user-drag: none;
+  user-select: none;
+  pointer-events: none;
+}
+#about-naspro .ab-card-gloss {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,255,255,.22) 0%,
+      rgba(255,255,255,.05) 28%,
+      transparent 55%,
+      transparent 100%
+    );
+  mix-blend-mode: overlay;
+  opacity: .65;
+  transition: opacity .45s ease;
+}
+#about-naspro .ab-card-mark {
+  position: absolute;
+  top: 14px; left: 14px;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 10px 5px 8px;
+  background: rgba(11,22,36,.82);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 999px;
+  font-family: 'Poppins', system-ui, sans-serif;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: rgba(214,232,255,.85);
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: opacity .35s ease, transform .35s ease;
+  pointer-events: none;
+}
+#about-naspro .ab-card-mark::before {
+  content: '';
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--naspro-cyan-soft);
+  box-shadow: 0 0 6px rgba(41,195,242,.8);
+}
+#about-naspro .ab-card-photo--front {
+  z-index: 3;
+  transform: translate(0, 0) scale(1) rotate(0deg);
+  opacity: 1;
+  filter: none;
+}
+#about-naspro .ab-card-photo--front .ab-card-mark {
+  opacity: 1;
+  transform: translateY(0);
+}
+#about-naspro .ab-card-photo--back {
+  z-index: 2;
+  transform: translate(36px, 22px) scale(0.93) rotate(3.5deg);
+  opacity: .72;
+  filter: brightness(.72) saturate(.9);
+}
+#about-naspro .ab-card-photo--back .ab-card-gloss { opacity: .25; }
+#about-naspro .ab-card-photo--back:hover {
+  transform: translate(44px, 14px) scale(0.96) rotate(4.5deg);
+  opacity: .9;
+  filter: brightness(.88) saturate(1);
+}
+#about-naspro .ab-showcase.is-back .ab-card-photo--front {
+  z-index: 2;
+  transform: translate(-36px, 22px) scale(0.93) rotate(-3.5deg);
+  opacity: .72;
+  filter: brightness(.72) saturate(.9);
+}
+#about-naspro .ab-showcase.is-back .ab-card-photo--front .ab-card-mark {
+  opacity: 0;
+  transform: translateY(-4px);
+}
+#about-naspro .ab-showcase.is-back .ab-card-photo--front .ab-card-gloss { opacity: .25; }
+#about-naspro .ab-showcase.is-back .ab-card-photo--front:hover {
+  transform: translate(-44px, 14px) scale(0.96) rotate(-4.5deg);
+  opacity: .9;
+  filter: brightness(.88) saturate(1);
+}
+#about-naspro .ab-showcase.is-back .ab-card-photo--back {
+  z-index: 3;
+  transform: translate(0, 0) scale(1) rotate(0deg);
+  opacity: 1;
+  filter: none;
+}
+#about-naspro .ab-showcase.is-back .ab-card-photo--back .ab-card-mark {
+  opacity: 1;
+  transform: translateY(0);
+}
+#about-naspro .ab-showcase.is-back .ab-card-photo--back .ab-card-gloss { opacity: .65; }
+#about-naspro .ab-showcase::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 75px;
+  width: 58%;
+  height: 22px;
+  background: radial-gradient(ellipse, rgba(0,0,0,.6) 0%, transparent 72%);
+  filter: blur(10px);
+  pointer-events: none;
+  z-index: 0;
+}
+#about-naspro .ab-showcase__caption {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: 'Poppins', system-ui, sans-serif;
+  font-size: 11px;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  color: rgba(214,232,255,.55);
+}
+#about-naspro .ab-cap-tag {
+  color: var(--naspro-cyan-soft);
+  font-weight: 600;
+}
+#about-naspro .ab-cap-sep {
+  width: 3px; height: 3px;
+  border-radius: 50%;
+  background: rgba(214,232,255,.35);
+}
+#about-naspro .ab-showcase__hint {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 4px;
+  font-family: 'Poppins', system-ui, sans-serif;
+  font-size: 10px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.30);
+  background: rgba(214,232,255,.04);
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(214,232,255,.08);
+  transition: color .3s ease, background .3s ease, border-color .3s ease;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+#about-naspro .ab-showcase__hint:hover {
+  color: var(--naspro-cyan-soft);
+  background: rgba(41,195,242,.08);
+  border-color: rgba(41,195,242,.25);
+}
+#about-naspro .ab-showcase__hint svg {
+  transition: transform .3s ease;
+}
+#about-naspro .ab-showcase__hint:hover svg {
+  transform: translateX(3px);
+}
+#about-naspro .ab-badge {
+  position: absolute;
+  bottom: 0;
+  right: clamp(0px, 2vw, 20px);
+  background: linear-gradient(135deg, rgba(11,22,36,.94), rgba(15,32,48,.98));
+  border: 1px solid var(--naspro-stroke);
+  border-radius: 14px;
+  padding: 12px 18px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 16px 40px rgba(0,0,0,.5);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 185px;
+  z-index: 4;
+}
+#about-naspro .ab-badge__dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--naspro-cyan-soft);
+  box-shadow: 0 0 8px rgba(0,174,239,.7);
+  flex-shrink: 0;
+  animation: dotPulse 2.2s ease-in-out infinite;
+}
+@keyframes dotPulse {
+  0%,100% { opacity: 1; transform: scale(1); }
+  50%     { opacity: .6; transform: scale(1.25); }
+}
+#about-naspro .ab-badge__text {
+  font-family: 'Poppins', system-ui, sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  color: rgba(214,232,255,.88);
+  letter-spacing: .04em;
+  line-height: 1.35;
+}
+#about-naspro .ab-badge__text span {
+  display: block;
+  font-size: 10px;
+  font-weight: 300;
+  color: rgba(255,255,255,.42);
+  margin-top: 2px;
+}
+#about-naspro .ab-divider {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: clamp(40px, 6vw, 72px);
+}
+#about-naspro .ab-divider::before,
+#about-naspro .ab-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+}
+#about-naspro .ab-divider::before { background: linear-gradient(90deg, transparent, var(--naspro-stroke)); }
+#about-naspro .ab-divider::after  { background: linear-gradient(90deg, var(--naspro-stroke), transparent); }
+#about-naspro .ab-divider span {
+  font-family: 'Poppins', system-ui, sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .26em;
+  text-transform: uppercase;
+  color: rgba(41,195,242,.5);
+  white-space: nowrap;
+}
+#about-naspro .ab-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(14px, 2vw, 24px);
+}
+#about-naspro .ab-card {
+  position: relative;
+  border-radius: 20px;
+  padding: clamp(20px, 2.5vw, 28px) clamp(18px, 2vw, 24px);
+  overflow: hidden;
+  background:
+    radial-gradient(500px 180px at 0% 0%, rgba(41,195,242,.09), transparent 55%),
+    linear-gradient(160deg, rgba(255,255,255,.065) 0%, rgba(255,255,255,.025) 100%);
+  box-shadow: inset 0 0 0 1px rgba(214,232,255,.12), 0 20px 50px rgba(0,0,0,.38);
+  backdrop-filter: blur(8px);
+  transition: transform .22s ease, box-shadow .25s ease;
+  cursor: default;
+}
+#about-naspro .ab-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  background: linear-gradient(135deg, rgba(41,195,242,.0) 0%, rgba(41,195,242,.55) 50%, rgba(214,232,255,.2) 100%);
+  opacity: 0;
+  transition: opacity .3s ease;
+  pointer-events: none;
+  padding: 1px;
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+}
+#about-naspro .ab-card:hover::before { opacity: 1; }
+#about-naspro .ab-card__tag {
+  position: absolute;
+  top: 16px; right: 16px;
+  font-family: 'Poppins', system-ui, sans-serif;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: .2em;
+  color: rgba(41,195,242,.5);
+  background: rgba(41,195,242,.07);
+  border: 1px solid rgba(41,195,242,.14);
+  border-radius: 999px;
+  padding: 4px 9px;
+}
+#about-naspro .ab-card:hover {
+  transform: translateY(-6px);
+  box-shadow: inset 0 0 0 1px rgba(214,232,255,.18), 0 28px 64px rgba(0,0,0,.48), 0 0 32px rgba(0,174,239,.08);
+}
+#about-naspro .ab-card__icon {
+  width: 46px; height: 46px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--naspro-cyan-soft) 0%, #5dd5fa 100%);
+  display: grid;
+  place-items: center;
+  color: #0b1a2b;
+  margin-bottom: 16px;
+  box-shadow: 0 8px 22px rgba(0,174,239,.28);
+  position: relative;
+}
+#about-naspro .ab-card__icon::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: 14px;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.22);
+}
+#about-naspro .ab-card__title {
+  font-family: 'Poppins', system-ui, sans-serif;
+  font-size: clamp(11px, 1vw, 13px);
+  font-weight: 600;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  margin: 0 0 8px;
+  background: linear-gradient(90deg, var(--naspro-cyan-soft), var(--naspro-ice));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+#about-naspro .ab-card__text {
+  font-family: 'Poppins', system-ui, sans-serif;
+  font-size: clamp(12px, 1vw, 13.5px);
+  font-weight: 300;
+  line-height: 1.7;
+  color: rgba(255,255,255,.72);
+  margin: 0;
+}
+#about-naspro .ab-card__line {
+  margin-top: 18px;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(41,195,242,.3), transparent);
+  border: none;
+}
+
+
+/* =========================================================
+   7. RESPONSIVE
+   ========================================================= */
+@media (max-width: 1024px) {
+  #about-naspro .ab-hero { grid-template-columns: 1fr; gap: clamp(32px, 5vw, 48px); }
+  #about-naspro .ab-visual { order: -1; }
+  #about-naspro .ab-copy { max-width: 100%; }
+  #about-naspro .ab-badge { bottom: 0; right: 12px; }
+}
+@media (max-width: 860px) {
+  #about-naspro .ab-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 520px) {
+  #about-naspro .ab-grid { grid-template-columns: 1fr; }
+  #about-naspro .ab-stats { gap: 20px; }
+  #about-naspro .ab-badge { right: 0; min-width: 160px; }
+  #about-naspro .ab-showcase { max-width: 280px; }
+  #about-naspro .ab-deck { max-width: 260px; }
+  #about-naspro .ab-card-photo--back {
+    transform: translate(24px, 16px) scale(0.92) rotate(3deg);
+  }
+  #about-naspro .ab-showcase.is-back .ab-card-photo--front {
+    transform: translate(-24px, 16px) scale(0.92) rotate(-3deg);
+  }
+}
+
+/* Accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+  #about-naspro .ab-card-photo,
+  #about-naspro .ab-bg,
+  #about-naspro .ab-glow,
+  #about-naspro .ab-badge__dot,
+  .hero .logo,
+  .hero .bg,
+  .hero-content {
+    animation: none !important;
+    transition: opacity .3s ease !important;
+  }
+}
+
+/* Compensar admin bar de WordPress */
+body.admin-bar .naspro-burger { top: 50px; }
+@media (max-width: 782px) {
+  body.admin-bar .naspro-burger { top: 64px; }
+}
+
+/* =========================================================
+   8. AJUSTES v1 — Iteración tras primera revisión visual
+   ========================================================= */
+
+/* ── 8.1 Botón HERO: reducir halo blanco ── */
+.hero .btn {
+  background: linear-gradient(90deg, var(--naspro-cyan) 0%, var(--naspro-cyan-soft) 100%);
+  box-shadow: 0 4px 14px rgba(0, 174, 239, 0.22);
+}
+.hero .btn:hover {
+  box-shadow: 0 6px 20px rgba(0, 174, 239, 0.38);
+}
+
+
+/* ── 8.2 Fondos: hacer transición suave entre secciones ──
+   Unificamos el color base de las 3 secciones y dejamos
+   que los efectos decorativos (radiales, animaciones) floten
+   sobre un mismo lienzo oscuro. */
+
+.naspro-landing-body {
+  background: #0b1624; /* base unificada para toda la landing */
+}
+
+#capas {
+  background: transparent; /* hereda del body */
+}
+
+#about-naspro {
+  padding-top: clamp(40px, 6vw, 80px); /* menos padding arriba */
+}
+
+#about-naspro .ab-bg {
+  /* Ocultamos los radiales brillantes superiores para que no
+     "salten" al venir desde capas. Mantenemos el gradient base
+     y solo el radial del centro-abajo. */
+  background:
+    radial-gradient(600px 400px at 50% 85%, rgba(0,174,239,.08), transparent 65%),
+    linear-gradient(180deg, #0b1624 0%, #0f2030 55%, #0a1422 100%);
+}
+
+
+/* ── 8.3 About: arreglar solapamientos packaging/badge/botones ──
+   Damos espacio debajo del showcase y reposicionamos el badge
+   para que no pise el caption ni el botón "Ver trasera". */
+
+#about-naspro .ab-visual {
+  padding-bottom: 80px; /* espacio para el badge */
+}
+
+#about-naspro .ab-showcase {
+  padding-bottom: 60px; /* separación interna */
+}
+
+#about-naspro .ab-badge {
+  bottom: 0;
+  right: 0;
+  transform: none;
+}
+
+/* En móvil/tablet, badge centrado abajo */
+@media (max-width: 1024px) {
+  #about-naspro .ab-visual { padding-bottom: 100px; }
+  #about-naspro .ab-badge {
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+  }
+}
+
+
+/* ── 8.4 Menú drawer: fondo más opaco ── */
+.naspro-drawer__overlay {
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+.naspro-drawer__panel {
+  background: linear-gradient(180deg, #0b1624 0%, #0a1422 100%);
+  border-left: 1px solid rgba(214, 232, 255, 0.18);
+}
+
+
+/* ── 8.5 Hero: separación desde arriba para dar aire al logo ── */
+.hero-content {
+  padding-top: 40px; /* reducido de 72px */
+}
+/* =========================================================
+   9. AJUSTES v2 — Segunda iteración visual
+   ========================================================= */
+
+/* ── 9.1 Hero: reducir overlay oscuro para transición suave ──
+   El overlay bajaba demasiado el color al final del hero y creaba
+   un salto brusco al entrar en #capas. Lo suavizamos. */
+.hero .overlay {
+  background: linear-gradient(180deg,
+    rgba(0, 0, 0, 0.15) 0%,
+    rgba(0, 0, 0, 0.25) 50%,
+    rgba(11, 22, 36, 0.0) 100%);
+}
+
+
+/* ── 9.2 About: eliminar líneas decorativas superior/inferior ──
+   Estas líneas hairline eran separadores visuales cuando los
+   fondos eran distintos. Ahora que el fondo es unificado, solo
+   estorban. */
+#about-naspro::before,
+#about-naspro::after {
+  display: none;
+}
+/* =========================================================
+   10. AJUSTES v3 — Tercera iteración visual
+   ========================================================= */
+
+/* ── 10.1 Botón hamburguesa: pegado al borde derecho ──
+   Antes estaba dentro de un contenedor centrado de 1140px,
+   lo que lo dejaba "flotando" en medio de la pantalla en
+   monitores grandes. Ahora va fijo a la derecha. */
+.naspro-burger {
+  top: 18px;
+  left: auto;
+  right: 20px;
+  transform: none;
+  width: auto;
+  display: block;
+}
+
+/* Ajuste cuando hay barra de WordPress admin */
+body.admin-bar .naspro-burger { top: 50px; }
+@media (max-width: 782px) {
+  body.admin-bar .naspro-burger { top: 64px; }
+}
+
+
+/* ── 10.2 Hero: fade-to-body al final para transición perfecta ──
+   Añadimos un gradient en la parte inferior del hero que se
+   funde con el color del body. Así la entrada a #capas es
+   invisible. */
+.hero::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 180px;
+  z-index: 2;
+  pointer-events: none;
+  background: linear-gradient(180deg,
+    rgba(11, 22, 36, 0) 0%,
+    rgba(11, 22, 36, 0.6) 50%,
+    rgba(11, 22, 36, 1) 100%);
+}
+
+
+/* ── 10.3 Capas: fade-in desde el top para reforzar continuidad ──
+   Pequeño gradient invertido en la parte superior del #capas
+   para asegurar que arranque perfectamente desde el color del body. */
+#capas {
+  position: relative;
+}
+#capas::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  pointer-events: none;
+  background: linear-gradient(180deg,
+    rgba(11, 22, 36, 1) 0%,
+    rgba(11, 22, 36, 0) 100%);
+  z-index: 1;
+}
+#capas > * {
+  position: relative;
+  z-index: 2;
+}
+/* =========================================================
+   11. AJUSTES v4 — Contraste botones about
+   ========================================================= */
+
+/* ── 11.1 Caption "Sport Edition · 30 tiras premium" más legible ── */
+#about-naspro .ab-showcase__caption {
+  color: rgba(214, 232, 255, 0.85);
+  font-weight: 500;
+}
+#about-naspro .ab-cap-tag {
+  color: var(--naspro-cyan-soft);
+  font-weight: 700;
+}
+#about-naspro .ab-cap-sep {
+  background: rgba(214, 232, 255, 0.65);
+}
+
+
+/* ── 11.2 Botón "Ver trasera / Ver frontal" con más presencia ── */
+#about-naspro .ab-showcase__hint {
+  color: rgba(214, 232, 255, 0.95);
+  background: rgba(41, 195, 242, 0.12);
+  border: 1px solid rgba(41, 195, 242, 0.35);
+  font-weight: 600;
+  padding: 9px 16px;
+}
+#about-naspro .ab-showcase__hint:hover {
+  color: #fff;
+  background: rgba(41, 195, 242, 0.22);
+  border-color: rgba(41, 195, 242, 0.6);
+  box-shadow: 0 4px 14px rgba(41, 195, 242, 0.18);
+}
+#about-naspro .ab-showcase__hint svg {
+  opacity: 0.95;
+}
+/* =========================================================
+   13. AJUSTES v6 — Fix X drawer: evitar que el burger
+   intercepte clicks cuando el menú está abierto
+   ========================================================= */
+
+/* Cuando el menú está abierto, deshabilitamos clicks
+   en el botón hamburguesa (aunque esté invisible ya). */
+body.naspro-menu-open .naspro-burger__btn {
+  pointer-events: none !important;
+}
+
+/* Asegurar que el close del drawer está por encima de todo */
+.naspro-drawer__close {
+  z-index: 100000;
+}
+/* =========================================================
+   14. AJUSTES v7 — Composición editorial del about
+   ========================================================= */
+
+/* ── 14.1 Mover badge "Rendimiento probado" arriba ──
+   En lugar de esquina inferior derecha (donde chocaba con
+   todo), lo colocamos al lado del índice "01 — FRONTAL". */
+#about-naspro .ab-visual {
+  padding-bottom: 0; /* anulamos el padding que añadimos antes */
+  padding-top: 0;
+}
+
+#about-naspro .ab-badge {
+  position: static;        /* fuera del absolute */
+  align-self: flex-end;    /* alineado a la derecha del visual */
+  margin-bottom: 18px;
+  min-width: auto;
+  padding: 10px 14px;
+  transform: none;
+  bottom: auto;
+  right: auto;
+}
+
+/* Móvil: centrado */
+@media (max-width: 1024px) {
+  #about-naspro .ab-visual { padding-bottom: 0; }
+  #about-naspro .ab-badge {
+    align-self: center;
+    transform: none;
+    left: auto;
+  }
+}
+
+
+/* ── 14.2 Más aire entre packaging y caption "SPORT EDITION" ──
+   El deck de cartas tiene poco margen abajo y la caption quedaba
+   pegada. Damos más separación. */
+#about-naspro .ab-deck {
+  margin-bottom: 42px;      /* antes era 26px */
+}
+
+#about-naspro .ab-showcase__caption {
+  margin-bottom: 16px;      /* antes era 10px */
+}
+
+#about-naspro .ab-showcase {
+  padding-bottom: 40px;     /* menos que antes (ya no hay badge absolute abajo) */
+}
+/* =========================================================
+   16. CAPAS DESKTOP — Capas pequeñas + botón premium al lado
+   ========================================================= */
+
+@media (min-width: 641px) {
+
+  /* ── 16.1 Capas apiladas más pequeñas en estado cerrado ── */
+  #capas .nx-scene:not(.is-open) .nx-row {
+    width: 280px;
+    margin-top: -50px;
+  }
+  #capas .nx-scene:not(.is-open) .nx-row:first-child {
+    margin-top: 0;
+  }
+  #capas .nx-scene:not(.is-open) .nx-img-wrap {
+    width: 220px;
+    height: 140px;
+  }
+
+/* ── 16.2 Posición del botón: centrado debajo ── */
+  #capas .nx-btn-wrap {
+    position: relative;
+    margin-top: clamp(40px, 5vw, 70px);
+    display: flex;
+    justify-content: center;
+    z-index: 3;
+  }
+
+  /* ── 16.3 BOTÓN PREMIUM — simple y elegante ── */
+  #capas .nx-launch {
+    all: unset;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 22px;
+    font-family: 'Poppins', system-ui, sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--naspro-cyan-soft);
+    background: rgba(0, 174, 239, 0.08);
+    border: 1px solid rgba(0, 174, 239, 0.4);
+    border-radius: 12px;
+    box-shadow:
+      0 4px 12px rgba(0, 0, 0, 0.25),
+      inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    transition:
+      background 0.25s ease,
+      border-color 0.25s ease,
+      color 0.25s ease,
+      transform 0.2s ease,
+      box-shadow 0.25s ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Icono */
+  #capas .nx-launch__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+    color: var(--naspro-cyan-soft);
+    transition: color 0.25s ease;
+  }
+  #capas .nx-launch__icon-stop {
+    display: none;
+  }
+
+  /* Label */
+  #capas .nx-launch__label {
+    line-height: 1;
+  }
+
+
+  /* ── 16.4 HOVER sutil ── */
+  #capas .nx-launch:hover {
+    background: rgba(0, 174, 239, 0.16);
+    border-color: rgba(0, 174, 239, 0.7);
+    color: var(--naspro-cyan);
+    transform: translateY(-2px);
+    box-shadow:
+      0 8px 20px rgba(0, 0, 0, 0.3),
+      0 0 20px rgba(0, 174, 239, 0.2),
+      inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  }
+  #capas .nx-launch:hover .nx-launch__icon {
+    color: var(--naspro-cyan);
+  }
+  #capas .nx-launch:active {
+    transform: translateY(0);
+  }
+
+
+  /* ── 16.5 ESTADO ABIERTO: icono cambia a stop ── */
+  #capas .nx-scene.is-open ~ .nx-btn-wrap .nx-launch__icon-play {
+    display: none;
+  }
+  #capas .nx-scene.is-open ~ .nx-btn-wrap .nx-launch__icon-stop {
+    display: inline;
+  }
+}
+/* =========================================================
+   17. CAPAS MÓVIL (≤640px) — Layout estático vertical
+   En móvil no hay toggle, las 4 capas se muestran siempre
+   como tarjetas apiladas, título arriba + imagen + descripción.
+   ========================================================= */
+
+@media (max-width: 640px) {
+
+  section#capas {
+    padding: 60px 16px !important;
+  }
+
+  /* Escena: columna natural sin posicionamiento absoluto */
+  section#capas #nx-scene,
+  section#capas #nx-scene.is-open {
+    position: static !important;
+    height: auto !important;
+    max-width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 20px !important;
+    margin: 30px auto 0 !important;
+  }
+
+  /* Cada capa: tarjeta con fondo sutil */
+  section#capas #nx-scene .nx-row {
+    position: static !important;
+    transform: none !important;
+    top: auto !important;
+    left: auto !important;
+    width: 100% !important;
+    max-width: 320px !important;
+    margin: 0 auto !important;
+    padding: 28px 20px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    gap: 0 !important;
+    background: rgba(255, 255, 255, 0.025) !important;
+    border: 1px solid rgba(0, 174, 239, 0.12) !important;
+    border-radius: 16px !important;
+    backdrop-filter: blur(4px) !important;
+    animation: none !important;
+  }
+
+  /* Ocultar el número gigante (no aplica en móvil) */
+  section#capas #nx-scene .nx-bignum {
+    display: none !important;
+  }
+
+  /* Tag con display:contents para reorganizar hijos */
+  section#capas #nx-scene .nx-row .nx-tag {
+    order: 1 !important;
+    position: static !important;
+    transform: none !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    padding: 0 !important;
+    border: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: none !important;
+    display: contents !important;
+  }
+
+  /* Número de la capa (01, 02...) */
+  section#capas #nx-scene .nx-row .nx-tag__num {
+    order: 1 !important;
+    margin: 0 0 6px !important;
+    font-size: 11px !important;
+    letter-spacing: 0.32em !important;
+    color: rgba(41, 195, 242, 0.65) !important;
+    font-weight: 600 !important;
+  }
+
+  /* Título */
+  section#capas #nx-scene .nx-row .nx-tag h4 {
+    order: 2 !important;
+    margin: 0 0 18px !important;
+    font-size: 14px !important;
+    letter-spacing: 0.14em !important;
+    color: var(--naspro-cyan-soft) !important;
+    text-transform: uppercase !important;
+    font-weight: 600 !important;
+  }
+
+  /* Imagen centrada */
+  section#capas #nx-scene .nx-row .nx-img-wrap {
+    order: 3 !important;
+    position: relative !important;
+    flex: 0 0 auto !important;
+    width: 180px !important;
+    height: 130px !important;
+    margin: 0 0 18px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    animation: none !important;
+  }
+  section#capas #nx-scene .nx-row .nx-img-wrap img {
+    position: relative !important;
+    inset: auto !important;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 180px !important;
+    max-height: 130px !important;
+    object-fit: contain !important;
+    object-position: center center !important;
+    margin: 0 auto !important;
+    filter: brightness(1.2) !important;
+    transform: none !important;
+  }
+
+  /* Descripción */
+  section#capas #nx-scene .nx-row .nx-tag p {
+    order: 4 !important;
+    margin: 0 !important;
+    max-width: 260px !important;
+    font-size: 12.5px !important;
+    line-height: 1.6 !important;
+    color: rgba(255, 255, 255, 0.75) !important;
+    text-align: center !important;
+  }
+
+  /* Ocultar el botón POWER en móvil (el layout es estático siempre) */
+  #capas .nx-btn-wrap {
+    display: none !important;
+  }
+}
+/* =========================================================
+   18. SECCIÓN PRODUCTO — "Elige tu NASPRO"
+   3 tarjetas (unidad / pack / suscripción) + tira de confianza
+   ========================================================= */
+
+#producto {
+  position: relative;
+  width: 100%;
+  padding: clamp(80px, 10vw, 140px) clamp(20px, 4vw, 60px);
+  color: var(--naspro-ice);
+  overflow: hidden;
+  isolation: isolate;
+  font-family: 'Poppins', system-ui, sans-serif;
+}
+
+#producto .prod-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(900px 500px at 20% 30%, rgba(41, 195, 242, 0.12), transparent 55%),
+    radial-gradient(800px 500px at 85% 70%, rgba(214, 232, 255, 0.06), transparent 60%),
+    linear-gradient(180deg, #0b1624 0%, #0f2030 60%, #0a1422 100%);
+  z-index: -1;
+}
+
+
+/* ─── HEADER ───────────────────────────────── */
+#producto .prod-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto clamp(50px, 6vw, 80px);
+}
+#producto .prod-eyebrow {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--naspro-cyan-soft);
+  opacity: 0.85;
+  margin-bottom: 16px;
+}
+#producto .prod-title {
+  font-family: 'Bebas Neue', system-ui, sans-serif;
+  font-size: clamp(36px, 6vw, 72px);
+  line-height: 1.02;
+  margin: 0 0 18px;
+  letter-spacing: 0.02em;
+  background: linear-gradient(100deg, var(--naspro-cyan-soft) 0%, var(--naspro-ice) 60%, rgba(255, 255, 255, 0.9) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  filter: drop-shadow(0 0 10px rgba(0, 174, 239, 0.2));
+}
+#producto .prod-sub {
+  font-size: clamp(14px, 1.3vw, 16px);
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.7;
+  margin: 0;
+}
+
+
+/* ─── GRID DE 3 TARJETAS ──────────────────── */
+#producto .prod-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(20px, 2.5vw, 32px);
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: stretch;
+}
+
+
+/* ─── TARJETA ─────────────────────────────── */
+#producto .prod-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: clamp(24px, 2.5vw, 32px);
+  border-radius: 22px;
+  background:
+    linear-gradient(160deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.015) 100%);
+  border: 1px solid rgba(214, 232, 255, 0.1);
+  backdrop-filter: blur(8px);
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  overflow: hidden;
+  isolation: isolate;
+}
+#producto .prod-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(41, 195, 242, 0.25);
+  box-shadow:
+    0 30px 60px rgba(0, 0, 0, 0.5),
+    0 0 40px rgba(0, 174, 239, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+
+/* ─── DESTACADA ("Más vendido") ─────────── */
+#producto .prod-card.is-featured {
+  border-color: rgba(41, 195, 242, 0.45);
+  background:
+    linear-gradient(160deg, rgba(41, 195, 242, 0.06) 0%, rgba(41, 195, 242, 0.01) 100%);
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.5),
+    0 0 40px rgba(0, 174, 239, 0.18);
+  transform: translateY(-8px); /* sobresale un poco */
+}
+#producto .prod-card.is-featured:hover {
+  transform: translateY(-14px);
+  box-shadow:
+    0 35px 70px rgba(0, 0, 0, 0.55),
+    0 0 60px rgba(0, 174, 239, 0.3);
+}
+
+
+/* ─── BADGE "Más vendido" ─────────────────── */
+#producto .prod-card__badge {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  z-index: 2;
+  padding: 6px 12px;
+  background: linear-gradient(90deg, var(--naspro-cyan), var(--naspro-cyan-soft));
+  color: #0b1a2b;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  box-shadow: 0 6px 18px rgba(0, 174, 239, 0.35);
+}
+
+
+/* ─── IMAGEN DEL PRODUCTO ─────────────────── */
+#producto .prod-card__image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  max-height: 240px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.02);
+  overflow: hidden;
+}
+#producto .prod-card__image::after {
+  content: '';
+  position: absolute;
+  inset: 10%;
+  background: radial-gradient(ellipse at center, rgba(0, 174, 239, 0.25) 0%, transparent 65%);
+  filter: blur(30px);
+  z-index: 0;
+  pointer-events: none;
+}
+#producto .prod-card__image img {
+  position: relative;
+  z-index: 1;
+  width: 85%;
+  height: 85%;
+  object-fit: contain;
+  object-position: center;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
+  transition: transform 0.35s ease;
+}
+#producto .prod-card:hover .prod-card__image img {
+  transform: scale(1.05);
+}
+
+
+/* ─── BODY DE LA TARJETA ──────────────────── */
+#producto .prod-card__body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+#producto .prod-card__name {
+  font-family: 'Poppins', system-ui, sans-serif;
+  font-size: clamp(16px, 1.4vw, 20px);
+  font-weight: 600;
+  color: var(--naspro-ice);
+  margin: 0 0 4px;
+  letter-spacing: 0.02em;
+}
+
+#producto .prod-card__variant {
+  font-size: 12px;
+  font-weight: 400;
+  color: rgba(214, 232, 255, 0.55);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin: 0 0 18px;
+}
+
+
+/* ─── PRECIO ───────────────────────────── */
+#producto .prod-card__price {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  margin-bottom: 4px;
+}
+#producto .prod-card__price-amount {
+  font-family: 'Bebas Neue', system-ui, sans-serif;
+  font-size: clamp(32px, 3.5vw, 44px);
+  line-height: 1;
+  background: linear-gradient(90deg, var(--naspro-cyan-soft), var(--naspro-ice));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  letter-spacing: 0.02em;
+}
+#producto .prod-card__price-unit {
+  font-family: 'Poppins', system-ui, sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: rgba(214, 232, 255, 0.55);
+}
+#producto .prod-card__price-desc {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--naspro-cyan-soft);
+  margin: 0 0 18px;
+  opacity: 0.85;
+}
+
+
+/* ─── LISTA DE BENEFICIOS ────────────────── */
+#producto .prod-card__benefits {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+#producto .prod-card__benefits li {
+  position: relative;
+  padding-left: 20px;
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.72);
+}
+#producto .prod-card__benefits li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 10px;
+  height: 1px;
+  background: var(--naspro-cyan-soft);
+  opacity: 0.7;
+}
+
+
+/* ─── CTA ─────────────────────────────── */
+#producto .prod-card__cta {
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 20px;
+  border-radius: 12px;
+  font-family: 'Poppins', system-ui, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: rgba(0, 174, 239, 0.1);
+  border: 1px solid rgba(0, 174, 239, 0.35);
+  color: var(--naspro-cyan-soft);
+  transition: all 0.25s ease;
+}
+#producto .prod-card__cta:hover {
+  background: rgba(0, 174, 239, 0.2);
+  border-color: rgba(0, 174, 239, 0.7);
+  color: var(--naspro-cyan);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 174, 239, 0.25);
+}
+#producto .prod-card__cta svg {
+  transition: transform 0.25s ease;
+}
+#producto .prod-card__cta:hover svg {
+  transform: translateX(3px);
+}
+
+/* CTA de la tarjeta destacada: cyan sólido */
+#producto .prod-card.is-featured .prod-card__cta {
+  background: linear-gradient(90deg, var(--naspro-cyan), var(--naspro-cyan-soft));
+  border-color: transparent;
+  color: #0b1a2b;
+  font-weight: 600;
+  box-shadow: 0 10px 30px rgba(0, 174, 239, 0.3);
+}
+#producto .prod-card.is-featured .prod-card__cta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(0, 174, 239, 0.45);
+  color: #0b1a2b;
+}
+
+/* Botón pendiente de Shopify: cursor por defecto y aviso visual sutil */
+#producto .prod-card__cta[data-pending="true"] {
+  cursor: not-allowed;
+  opacity: 0.75;
+}
+
+
+/* ─── TIRA DE CONFIANZA (envío / devolución / pago) ─── */
+#producto .prod-trust {
+  max-width: 900px;
+  margin: clamp(50px, 6vw, 80px) auto 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(20px, 3vw, 40px);
+  padding: clamp(24px, 3vw, 36px) clamp(20px, 3vw, 40px);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(214, 232, 255, 0.08);
+  backdrop-filter: blur(6px);
+}
+#producto .prod-trust__item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+#producto .prod-trust__item svg {
+  flex: 0 0 auto;
+  color: var(--naspro-cyan-soft);
+  opacity: 0.9;
+}
+#producto .prod-trust__item strong {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--naspro-ice);
+  margin-bottom: 2px;
+  letter-spacing: 0.04em;
+}
+#producto .prod-trust__item span {
+  display: block;
+  font-size: 11px;
+  font-weight: 300;
+  color: rgba(214, 232, 255, 0.55);
+  letter-spacing: 0.02em;
+}
+
+
+/* ─── RESPONSIVE ──────────────────────── */
+@media (max-width: 900px) {
+  #producto .prod-grid {
+    grid-template-columns: 1fr;
+    max-width: 440px;
+  }
+  #producto .prod-card.is-featured {
+    transform: none; /* en móvil no sobresale */
+  }
+  #producto .prod-trust {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
