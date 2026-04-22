@@ -47,7 +47,7 @@ La idea es que el cliente pueda comprar en pocos clics:
 - Si falta un dato, dejarlo como pendiente.
 - Trabajar paso a paso.
 
-## Estructura del tema
+## Estructura del  tema
 
 ```text
 naspro-child/

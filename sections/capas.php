@@ -68,7 +68,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
   </div>
 
- <<div class="nx-btn-wrap">
+  <div class="nx-btn-wrap">
     <button class="nx-launch" id="nx-btn" type="button" aria-expanded="false">
       <span class="nx-launch__icon" aria-hidden="true">
         <svg viewBox="0 0 16 16" width="14" height="14" fill="currentColor">
