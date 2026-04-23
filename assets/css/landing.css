@@ -1819,6 +1819,7 @@ body.naspro-menu-open .naspro-burger__btn {
   position: relative;
   width: 100%;
   padding: clamp(80px, 10vw, 140px) clamp(20px, 4vw, 60px);
+  padding-top: 40px;
   color: var(--naspro-ice);
   overflow: hidden;
   isolation: isolate;
