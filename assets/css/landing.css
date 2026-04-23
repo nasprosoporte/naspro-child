@@ -1288,7 +1288,7 @@ body.naspro-menu-open .naspro-burger {
 }
 
 .ab-floating img {
-  width: 320px;
+  width: 420px;
   max-width: 100%;
   filter: drop-shadow(0 30px 60px rgba(0, 180, 255, 0.2)) drop-shadow(0 10px 30px rgba(0,0,0,0.5));
   animation: floatImg 4s ease-in-out infinite;
