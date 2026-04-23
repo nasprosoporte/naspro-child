@@ -60,43 +60,15 @@ if ( ! defined( 'ABSPATH' ) ) exit;
             <span class="ab-idx-label" id="abIdxLabel">Frontal</span>
           </div>
 
-          <!-- Deck de cartas -->
-          <div class="ab-deck" id="abDeck">
-
-            <!-- Carta frontal -->
-            <button
-              class="ab-card-photo ab-card-photo--front"
-              data-view="front"
-              aria-label="Ver cara frontal del producto"
-              type="button"
+          <!-- Imagen flotante -->
+          <div class="ab-floating" id="abFloating">
+            <img
+              id="abFloatImg"
+              src="https://naspro.es/wp-content/uploads/2026/04/Packaging-NF-scaled.png"
+              alt="NASPRO Sport"
+              loading="eager"
+              decoding="async"
             >
-              <img
-                src="https://naspro.es/wp-content/uploads/2026/04/Packaging-NF-scaled.png"
-                alt="NASPRO Sport — Packaging Frontal"
-                loading="eager"
-                decoding="async"
-              >
-              <span class="ab-card-gloss" aria-hidden="true"></span>
-              <span class="ab-card-mark" aria-hidden="true">Frontal</span>
-            </button>
-
-            <!-- Carta trasera -->
-            <button
-              class="ab-card-photo ab-card-photo--back"
-              data-view="back"
-              aria-label="Ver cara trasera del producto"
-              type="button"
-            >
-              <img
-                src="https://naspro.es/wp-content/uploads/2026/04/Mockup_Back-NF-scaled.png"
-                alt="NASPRO Sport — Packaging Trasero"
-                loading="lazy"
-                decoding="async"
-              >
-              <span class="ab-card-gloss" aria-hidden="true"></span>
-              <span class="ab-card-mark" aria-hidden="true">Trasera</span>
-            </button>
-
           </div>
 
           <!-- Caption editorial -->

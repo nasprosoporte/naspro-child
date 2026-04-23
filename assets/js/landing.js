@@ -101,46 +101,44 @@
       }
     });
   }
-  /* =========================================================
-     3. SECCIÓN ABOUT (deck de cartas frontal/trasera)
-     ========================================================= */
-  function initAbout() {
-    var showcase = document.getElementById('abShowcase');
-    var idxNum   = document.getElementById('abIdxNum');
-    var idxLabel = document.getElementById('abIdxLabel');
-    var hintLbl  = document.getElementById('abHintLabel');
-    var swapBtn  = document.getElementById('abSwap');
+})();
 
-    if (!showcase || !idxNum || !idxLabel || !hintLbl || !swapBtn) return;
+// Swap imagen frontal/trasera con fade
+(function() {
+  const btn = document.getElementById('abSwap');
+  const img = document.getElementById('abFloatImg');
+  if (!btn || !img) return;
 
-    var cards = showcase.querySelectorAll('.ab-card-photo');
-    if (!cards.length) return;
+  const front = 'https://naspro.es/wp-content/uploads/2026/04/Packaging-NF-scaled.png';
+  const back = 'https://naspro.es/wp-content/uploads/2026/04/Mockup_Back-NF-scaled.png';
+  let showing = 'front';
 
-    function setView(view) {
-      var isBack = (view === 'back');
-      showcase.classList.toggle('is-back', isBack);
-      idxNum.textContent   = isBack ? '02'           : '01';
-      idxLabel.textContent = isBack ? 'Trasera'      : 'Frontal';
-      hintLbl.textContent  = isBack ? 'Ver frontal'  : 'Ver trasera';
-    }
+  btn.addEventListener('click', function() {
+    img.style.opacity = '0';
+    img.style.transition = 'opacity 0.3s ease';
+    setTimeout(function() {
+      showing = showing === 'front' ? 'back' : 'front';
+      img.src = showing === 'front' ? front : back;
+      img.style.opacity = '1';
+      btn.querySelector('span') && (btn.querySelector('span').textContent = showing === 'front' ? 'Ver trasera' : 'Ver frontal');
+    }, 300);
+  });
+})();
 
-    // Click en cada carta → activa esa cara
-    cards.forEach(function (card) {
-      card.addEventListener('click', function () {
-        setView(card.getAttribute('data-view'));
-      });
-    });
+// Parallax 3D imagen about
+(function() {
+  const section = document.getElementById('about-naspro');
+  const img = document.getElementById('abFloatImg');
+  if (!section || !img) return;
 
-    // Botón de alternar
-    swapBtn.addEventListener('click', function () {
-      setView(showcase.classList.contains('is-back') ? 'front' : 'back');
-    });
+  section.addEventListener('mousemove', function(e) {
+    const rect = section.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width - 0.5;
+    const y = (e.clientY - rect.top) / rect.height - 0.5;
+    img.style.transform = `translateY(0px) rotateY(${x * 20}deg) rotateX(${-y * 20}deg)`;
+  });
 
-    // Teaser al cargar: muestra brevemente la trasera y vuelve
-    setTimeout(function () {
-      setView('back');
-      setTimeout(function () { setView('front'); }, 1400);
-    }, 1800);
-  }
-
+  section.addEventListener('mouseleave', function() {
+    img.style.transform = '';
+  });
 })();
