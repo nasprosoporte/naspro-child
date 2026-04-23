@@ -903,7 +903,7 @@ body.naspro-menu-open .naspro-burger {
   border: 0;
   border-radius: 20px;
   overflow: hidden;
-  background: #fafbfc;
+  background: transparent;
   cursor: pointer;
   transform-origin: 50% 100%;
   transition:
