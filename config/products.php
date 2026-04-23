@@ -12,20 +12,19 @@
  *
  * Escalabilidad: añadir un producto = añadir una entrada al array.
  */
-<?php
-/**
- * CONFIG CENTRAL DE PRODUCTOS — NASPRO
- */
 if ( ! defined( 'ABSPATH' ) ) exit;
 
 return [
 
+    /* ─────────────────────────────────────────────
+       PRODUCTO BASE: 1 unidad NASPRO Sport 30 tiras
+       ───────────────────────────────────────────── */
     'unidad' => [
         'id'          => 'naspro-sport-30',
         'nombre'      => 'NASPRO Sport',
         'variante'    => '30 tiras premium',
-        'precio'      => '12,99€',
-        'precio_desc' => '',
+        'precio'      => '—',        // placeholder
+        'precio_desc' => '',         // descuento (vacío = sin descuento)
         'imagen'      => 'https://naspro.es/wp-content/uploads/2025/11/Packaging.jpg',
         'destacado'   => false,
         'badge'       => '',
@@ -35,17 +34,20 @@ return [
             'Resistente al sudor',
         ],
         'cta'         => 'Comprar ahora',
-        'shopify_url' => 'https://tienda.naspro.es/products/naspro-sport-30-tiras-nasales',
+        'shopify_url' => '#',
     ],
 
+    /* ─────────────────────────────────────────────
+       PACK X2
+       ───────────────────────────────────────────── */
     'pack2' => [
         'id'          => 'naspro-sport-pack-2',
         'nombre'      => 'Pack Duo',
         'variante'    => '60 tiras · 2 unidades',
-        'precio'      => '21,99€',
-        'precio_desc' => 'Ahorra un 15%',
+        'precio'      => '—',
+        'precio_desc' => 'Ahorra un —%',
         'imagen'      => 'https://naspro.es/wp-content/uploads/2025/11/Packaging.jpg',
-        'destacado'   => true,
+        'destacado'   => true,     // el "favorito", destacado visualmente
         'badge'       => 'Más vendido',
         'beneficios'  => [
             'Doble unidad, mejor precio',
@@ -53,15 +55,18 @@ return [
             'Ideal para uso regular',
         ],
         'cta'         => 'Comprar Pack',
-        'shopify_url' => 'https://tienda.naspro.es/products/pack-duo-naspro-60-tiras-nasales',
+        'shopify_url' => '#',
     ],
 
+    /* ─────────────────────────────────────────────
+       SUSCRIPCIÓN MENSUAL
+       ───────────────────────────────────────────── */
     'suscripcion' => [
         'id'          => 'naspro-sport-suscripcion',
         'nombre'      => 'Suscripción Mensual',
         'variante'    => '30 tiras cada mes',
-        'precio'      => '9,99€',
-        'precio_desc' => 'Ahorra un 23%',
+        'precio'      => '—',
+        'precio_desc' => 'Ahorra un —%',
         'imagen'      => 'https://naspro.es/wp-content/uploads/2025/11/Packaging.jpg',
         'destacado'   => false,
         'badge'       => '',
