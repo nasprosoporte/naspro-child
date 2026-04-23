@@ -25,7 +25,7 @@ return [
         'variante'    => '30 tiras premium',
         'precio'      => '12,99€',
         'precio_desc' => '',         // descuento (vacío = sin descuento)
-        'imagen'      => 'https://naspro.es/wp-content/uploads/2025/11/Packaging.jpg',
+        'imagen'      => 'https://naspro.es/wp-content/uploads/2026/04/Packaging-NF-scaled.png',
         'destacado'   => false,
         'badge'       => '',
         'beneficios'  => [
@@ -46,7 +46,7 @@ return [
         'variante'    => '60 tiras · 2 unidades',
         'precio'      => '21,99€',
         'precio_desc' => 'Ahorra un 15%',
-        'imagen'      => 'https://naspro.es/wp-content/uploads/2025/11/Packaging.jpg',
+        'imagen'      => 'https://naspro.es/wp-content/uploads/2026/04/Packaging-pack2-NF-scaled.png',
         'destacado'   => true,     // el "favorito", destacado visualmente
         'badge'       => 'Más vendido',
         'beneficios'  => [
@@ -67,7 +67,7 @@ return [
         'variante'    => '30 tiras cada mes',
         'precio'      => '9,99€',
         'precio_desc' => 'Ahorra un 23%',
-        'imagen'      => 'https://naspro.es/wp-content/uploads/2025/11/Packaging.jpg',
+        'imagen'      => 'https://naspro.es/wp-content/uploads/2026/04/Sub-mensual-NF.png',
         'destacado'   => false,
         'badge'       => '',
         'beneficios'  => [
