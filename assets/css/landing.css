@@ -344,7 +344,7 @@ body.naspro-menu-open .naspro-burger {
    ========================================================= */
 
 #capas {
-  scroll-margin-top: 60px;
+  scroll-margin-top: 40px;
   background: var(--naspro-bg-4);
   min-height: 100vh;
   display: flex;
@@ -1814,7 +1814,7 @@ body.naspro-menu-open .naspro-burger__btn {
    ========================================================= */
 
 #producto {
-  scroll-margin-top: 60px;
+  scroll-margin-top: 10px;
   position: relative;
   width: 100%;
   padding: clamp(80px, 10vw, 140px) clamp(20px, 4vw, 60px);
