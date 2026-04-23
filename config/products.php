@@ -23,7 +23,7 @@ return [
         'id'          => 'naspro-sport-30',
         'nombre'      => 'NASPRO Sport',
         'variante'    => '30 tiras premium',
-        'precio'      => '—',        // placeholder
+        'precio'      => '12,99€',
         'precio_desc' => '',         // descuento (vacío = sin descuento)
         'imagen'      => 'https://naspro.es/wp-content/uploads/2025/11/Packaging.jpg',
         'destacado'   => false,
@@ -34,7 +34,7 @@ return [
             'Resistente al sudor',
         ],
         'cta'         => 'Comprar ahora',
-        'shopify_url' => '#',
+        'shopify_url' => 'https://tienda.naspro.es/products/naspro-sport-30-tiras-nasales',
     ],
 
     /* ─────────────────────────────────────────────
@@ -44,8 +44,8 @@ return [
         'id'          => 'naspro-sport-pack-2',
         'nombre'      => 'Pack Duo',
         'variante'    => '60 tiras · 2 unidades',
-        'precio'      => '—',
-        'precio_desc' => 'Ahorra un —%',
+        'precio'      => '21,99€',
+        'precio_desc' => 'Ahorra un 15%',
         'imagen'      => 'https://naspro.es/wp-content/uploads/2025/11/Packaging.jpg',
         'destacado'   => true,     // el "favorito", destacado visualmente
         'badge'       => 'Más vendido',
@@ -55,7 +55,7 @@ return [
             'Ideal para uso regular',
         ],
         'cta'         => 'Comprar Pack',
-        'shopify_url' => '#',
+        'shopify_url' => 'https://tienda.naspro.es/products/pack-duo-naspro-60-tiras-nasales',
     ],
 
     /* ─────────────────────────────────────────────
@@ -65,8 +65,8 @@ return [
         'id'          => 'naspro-sport-suscripcion',
         'nombre'      => 'Suscripción Mensual',
         'variante'    => '30 tiras cada mes',
-        'precio'      => '—',
-        'precio_desc' => 'Ahorra un —%',
+        'precio'      => '9,99€',
+        'precio_desc' => 'Ahorra un 23%',
         'imagen'      => 'https://naspro.es/wp-content/uploads/2025/11/Packaging.jpg',
         'destacado'   => false,
         'badge'       => '',
