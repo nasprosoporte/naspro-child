@@ -1288,15 +1288,9 @@ body.naspro-menu-open .naspro-burger {
 }
 
 .ab-floating img {
-  width: 420px;
+  width: 500px;
   max-width: 100%;
-  filter: drop-shadow(0 30px 60px rgba(0, 180, 255, 0.2)) drop-shadow(0 10px 30px rgba(0,0,0,0.5));
   transform-style: preserve-3d;
-  transition: transform 0.4s ease, filter 0.4s ease;
-}
-
-.ab-floating img:hover {
-  transform: scale(1.08);
 }
 
 @keyframes floatImg {
