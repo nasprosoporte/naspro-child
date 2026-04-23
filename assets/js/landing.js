@@ -145,30 +145,3 @@
     img.style.transform = '';
   });
 })();
-
-// FAQ — Vitrina de museo
-(function() {
-  const items = document.querySelectorAll('.faq-item');
-  if (!items.length) return;
-
-  items.forEach(function(item) {
-    const btn = item.querySelector('.faq-question');
-    if (!btn) return;
-
-    btn.addEventListener('click', function() {
-      const isOpen = item.classList.contains('is-open');
-
-      // Cerrar todos
-      items.forEach(function(i) {
-        i.classList.remove('is-open');
-        i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
-      });
-
-      // Abrir el clicado si estaba cerrado
-      if (!isOpen) {
-        item.classList.add('is-open');
-        btn.setAttribute('aria-expanded', 'true');
-      }
-    });
-  });
-})();
