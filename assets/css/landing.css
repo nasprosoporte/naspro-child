@@ -344,7 +344,7 @@ body.naspro-menu-open .naspro-burger {
    ========================================================= */
 
 #capas {
-  scroll-margin-top: 40px;
+  scroll-margin-top: 60px;
   background: var(--naspro-bg-4);
   min-height: 100vh;
   display: flex;
@@ -352,6 +352,7 @@ body.naspro-menu-open .naspro-burger {
   align-items: center;
   justify-content: center;
   padding: clamp(80px, 10vw, 140px) clamp(20px, 4vw, 60px);
+  padding-top: 40px;
   font-family: 'Poppins', system-ui, sans-serif;
   position: relative;
   overflow: hidden;
@@ -1814,7 +1815,7 @@ body.naspro-menu-open .naspro-burger__btn {
    ========================================================= */
 
 #producto {
-  scroll-margin-top: 10px;
+  scroll-margin-top: 60px;
   position: relative;
   width: 100%;
   padding: clamp(80px, 10vw, 140px) clamp(20px, 4vw, 60px);
