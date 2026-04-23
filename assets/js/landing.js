@@ -113,15 +113,18 @@
   const back = 'https://naspro.es/wp-content/uploads/2026/04/Mockup_Back-NF-scaled.png';
   let showing = 'front';
 
-  btn.addEventListener('click', function() {
-    img.style.opacity = '0';
-    img.style.transition = 'opacity 0.3s ease';
-    setTimeout(function() {
-      showing = showing === 'front' ? 'back' : 'front';
-      img.src = showing === 'front' ? front : back;
-      img.style.opacity = '1';
-      btn.querySelector('span') && (btn.querySelector('span').textContent = showing === 'front' ? 'Ver trasera' : 'Ver frontal');
-    }, 300);
+  ['click', 'touchend'].forEach(function(evt) {
+    btn.addEventListener(evt, function(e) {
+      e.preventDefault();
+      img.style.opacity = '0';
+      img.style.transition = 'opacity 0.3s ease';
+      setTimeout(function() {
+        showing = showing === 'front' ? 'back' : 'front';
+        img.src = showing === 'front' ? front : back;
+        img.style.opacity = '1';
+        btn.querySelector('span') && (btn.querySelector('span').textContent = showing === 'front' ? 'Ver trasera' : 'Ver frontal');
+      }, 300);
+    });
   });
 })();
 
