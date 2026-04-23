@@ -71,7 +71,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
               type="button"
             >
               <img
-                src="https://naspro.es/wp-content/uploads/2026/04/Packaging.jpg"
+                src="https://naspro.es/wp-content/uploads/2026/04/Packaging-NF-scaled.png"
                 alt="NASPRO Sport — Packaging Frontal"
                 loading="eager"
                 decoding="async"
@@ -88,7 +88,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
               type="button"
             >
               <img
-                src="https://naspro.es/wp-content/uploads/2026/04/Mockup_Back.jpg"
+                src="https://naspro.es/wp-content/uploads/2026/04/Mockup_Back-NF-scaled.png"
                 alt="NASPRO Sport — Packaging Trasero"
                 loading="lazy"
                 decoding="async"
