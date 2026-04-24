@@ -117,24 +117,29 @@
     if (transitioning) return;
     transitioning = true;
 
-    img.style.transition = 'opacity 0.35s ease';
+    img.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
     img.style.opacity = '0';
+    img.style.transform = 'scale(0.88)';
 
     setTimeout(function() {
       showing = showing === 'front' ? 'back' : 'front';
       img.src = showing === 'front' ? front : back;
-      img.onload = function() {
-        img.style.opacity = '1';
-        setTimeout(function() { transitioning = false; }, 350);
-      };
-      // Fallback por si onload no se dispara
-      setTimeout(function() {
-        img.style.opacity = '1';
-        transitioning = false;
-      }, 600);
+      img.style.transition = 'none';
+      img.style.transform = 'scale(1.08)';
+      img.style.opacity = '0';
+
+      requestAnimationFrame(function() {
+        requestAnimationFrame(function() {
+          img.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+          img.style.opacity = '1';
+          img.style.transform = 'scale(1)';
+          setTimeout(function() { transitioning = false; }, 400);
+        });
+      });
+
       const label = btn.querySelector('span');
       if (label) label.textContent = showing === 'front' ? 'Ver trasera' : 'Ver frontal';
-    }, 350);
+    }, 400);
   }
 
   ['click', 'touchend'].forEach(function(evt) {
