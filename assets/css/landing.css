@@ -2389,3 +2389,38 @@ body.naspro-menu-open .naspro-burger__btn {
   color: rgba(255,255,255,0.72);
   transition: color 0.4s ease 0.2s;
 }
+
+#faq .faq-question {
+  background: none !important;
+  background-color: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  padding: 28px 0 !important;
+  color: inherit !important;
+  width: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+}
+
+#faq .faq-question:hover,
+#faq .faq-question:focus,
+#faq .faq-question:active,
+#faq .faq-question:focus-visible {
+  background: none !important;
+  background-color: transparent !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+#faq .faq-answer {
+  padding-left: 8px !important;
+  background: none !important;
+}
+
+#faq .faq-answer p {
+  padding: 0 !important;
+  margin: 0 0 32px 0 !important;
+  background: none !important;
+}
