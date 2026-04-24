@@ -194,3 +194,23 @@
     });
   });
 })();
+
+// Manifiesto — Typographic Impact
+(function() {
+  const slides = document.querySelectorAll('.mf-slide');
+  if (!slides.length) return;
+
+  const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+      }
+    });
+  }, {
+    threshold: 0.3
+  });
+
+  slides.forEach(function(slide) {
+    observer.observe(slide);
+  });
+})();
