@@ -2426,192 +2426,137 @@ body.naspro-menu-open .naspro-burger__btn {
 }
 
 /* ═══════════════════════════════════════
-   MANIFIESTO — Typographic Impact
+   MANIFIESTO — Portada de revista
 ═══════════════════════════════════════ */
 
 #manifiesto {
-  position: relative;
-  background: #000;
-  overflow: hidden;
+  background: #000 !important;
+  padding: 120px 0 !important;
+  overflow: hidden !important;
 }
 
 .mf-wrap {
-  position: relative;
+  max-width: 900px !important;
+  margin: 0 auto !important;
+  padding: 0 6vw !important;
 }
 
-.mf-scene {
-  display: flex;
-  flex-direction: column;
-}
-
-.mf-slide {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 0 6vw;
+/* Historia */
+.mf-story {
   opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
-              transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(30px);
+  transition: opacity 1s ease, transform 1s ease;
 }
 
-.mf-slide.is-visible {
+.mf-story.is-visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-#manifiesto .mf-slide {
-  opacity: 0 !important;
-  transform: translateY(60px) !important;
-  transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 1.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+.mf-story__text {
+  font-family: 'Poppins', sans-serif !important;
+  font-size: clamp(0.95rem, 1.8vw, 1.1rem) !important;
+  line-height: 2 !important;
+  color: rgba(255,255,255,0.5) !important;
+  font-weight: 300 !important;
+  letter-spacing: 0.02em !important;
+  max-width: 680px !important;
+  margin: 0 !important;
 }
 
-#manifiesto .mf-slide.is-visible {
+/* Divisor */
+.mf-divider {
+  width: 0;
+  height: 1px;
+  background: linear-gradient(90deg, #00b4ff, transparent);
+  margin: 60px 0;
+  transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1) 0.3s;
+}
+
+.mf-divider.is-visible {
+  width: 100%;
+}
+
+/* Manifiesto */
+.mf-manifesto {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 8px !important;
+}
+
+.mf-line {
+  font-family: 'Bebas Neue', sans-serif !important;
+  font-size: clamp(2.2rem, 5.5vw, 5rem) !important;
+  line-height: 1 !important;
+  letter-spacing: 0.03em !important;
+  color: #fff !important;
+  margin: 0 !important;
+  opacity: 0 !important;
+  transform: translateX(-30px) !important;
+  transition: opacity 0.7s ease calc(var(--i) * 0.1s),
+              transform 0.7s ease calc(var(--i) * 0.1s) !important;
+}
+
+.mf-line.is-visible {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+
+.mf-line--accent {
+  color: rgba(255,255,255,0.35) !important;
+}
+
+.mf-line--brand {
+  color: #00b4ff !important;
+}
+
+/* Footer */
+.mf-footer {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  margin-top: 60px !important;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease 0.8s, transform 0.8s ease 0.8s;
+}
+
+.mf-footer.is-visible {
   opacity: 1 !important;
   transform: translateY(0) !important;
 }
 
-.mf-slide span {
-  display: block;
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: clamp(4rem, 16vw, 14rem);
-  line-height: 0.9;
-  letter-spacing: 0.02em;
-  color: #fff;
-}
-
-.mf-slide .mf-accent {
-  color: #00b4ff;
-}
-
-.mf-slide[data-color="cyan"] span {
-  color: #00b4ff;
-}
-
-.mf-slide[data-color="cyan"] .mf-accent {
-  color: #fff;
-}
-
-/* Slide final */
-.mf-slide--final {
-  align-items: center;
-  text-align: center;
-  gap: 0;
-}
-
-.mf-welcome {
-  font-family: 'Poppins', sans-serif !important;
-  font-size: clamp(0.9rem, 2vw, 1.1rem) !important;
-  letter-spacing: 0.2em !important;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.5) !important;
-  margin-bottom: 24px;
-}
-
-.mf-brand {
-  font-family: 'Bebas Neue', sans-serif !important;
-  font-size: clamp(6rem, 22vw, 18rem) !important;
-  line-height: 0.85 !important;
-  color: #fff !important;
-  letter-spacing: 0.04em !important;
-}
-
 .mf-tagline {
-  font-family: 'Poppins', sans-serif !important;
-  font-size: clamp(0.85rem, 1.8vw, 1rem) !important;
-  letter-spacing: 0.15em !important;
-  text-transform: uppercase;
-  color: #00b4ff !important;
-  margin-top: 16px;
-  margin-bottom: 48px;
+  font-family: 'Bebas Neue', sans-serif !important;
+  font-size: clamp(1.5rem, 3vw, 2.5rem) !important;
+  color: rgba(255,255,255,0.2) !important;
+  letter-spacing: 0.1em !important;
 }
 
 .mf-cta {
-  display: inline-block;
-  padding: 16px 48px;
-  border: 1px solid rgba(255,255,255,0.3);
-  color: #fff;
-  font-family: 'Poppins', sans-serif;
-  font-size: 0.8rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  text-decoration: none;
-  transition: border-color 0.3s ease, color 0.3s ease, background 0.3s ease;
+  display: inline-block !important;
+  padding: 16px 48px !important;
+  border: 1px solid rgba(255,255,255,0.3) !important;
+  color: #fff !important;
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 0.8rem !important;
+  letter-spacing: 0.2em !important;
+  text-transform: uppercase !important;
+  text-decoration: none !important;
+  transition: border-color 0.3s ease, color 0.3s ease, background 0.3s ease !important;
+  background: none !important;
 }
 
 .mf-cta:hover {
-  border-color: #00b4ff;
-  color: #00b4ff;
-  background: rgba(0,180,255,0.05);
+  border-color: #00b4ff !important;
+  color: #00b4ff !important;
+  background: rgba(0,180,255,0.05) !important;
 }
 
 @media (max-width: 768px) {
-  .mf-slide {
-    padding: 0 8vw;
+  .mf-footer {
+    flex-direction: column !important;
+    gap: 32px !important;
+    align-items: flex-start !important;
   }
-
-  .mf-slide span {
-    font-size: clamp(3.5rem, 18vw, 7rem);
-  }
-}
-
-#manifiesto {
-  background: #000 !important;
-}
-
-#manifiesto .mf-slide {
-  min-height: 100vh !important;
-  display: flex !important;
-  flex-direction: column !important;
-  justify-content: center !important;
-  padding: 0 6vw !important;
-}
-
-#manifiesto .mf-slide span {
-  display: block !important;
-  font-family: 'Bebas Neue', sans-serif !important;
-  font-size: clamp(4rem, 16vw, 14rem) !important;
-  line-height: 0.9 !important;
-  color: #fff !important;
-}
-
-#manifiesto .mf-accent {
-  color: #00b4ff !important;
-}
-
-#manifiesto .mf-slide[data-color="cyan"] span {
-  color: #00b4ff !important;
-}
-
-#manifiesto .mf-slide--final {
-  align-items: center !important;
-  text-align: center !important;
-  gap: 0 !important;
-}
-
-#manifiesto .mf-welcome {
-  font-family: 'Poppins', sans-serif !important;
-  font-size: clamp(0.9rem, 2vw, 1.1rem) !important;
-  letter-spacing: 0.2em !important;
-  text-transform: uppercase !important;
-  color: rgba(255,255,255,0.5) !important;
-  margin-bottom: 24px !important;
-}
-
-#manifiesto .mf-brand {
-  font-size: clamp(6rem, 22vw, 18rem) !important;
-  line-height: 0.85 !important;
-  margin-bottom: 0 !important;
-}
-
-#manifiesto .mf-tagline {
-  font-family: 'Poppins', sans-serif !important;
-  font-size: clamp(0.85rem, 1.8vw, 1rem) !important;
-  letter-spacing: 0.15em !important;
-  text-transform: uppercase !important;
-  color: #00b4ff !important;
-  margin-top: 16px !important;
-  margin-bottom: 48px !important;
 }

@@ -195,21 +195,31 @@
   });
 })();
 
-// Manifiesto — Typographic Impact
+// Manifiesto — Portada de revista
 (function() {
-  const slides = document.querySelectorAll('.mf-slide');
-  if (!slides.length) return;
+  const story = document.querySelector('.mf-story');
+  const divider = document.querySelector('.mf-divider');
+  const lines = document.querySelectorAll('.mf-line');
+  const footer = document.querySelector('.mf-footer');
 
-  function checkSlides() {
-    slides.forEach(function(slide) {
-      const rect = slide.getBoundingClientRect();
-      const windowHeight = window.innerHeight;
-      if (rect.top < windowHeight * 0.75) {
-        slide.classList.add('is-visible');
-      }
-    });
+  if (!story) return;
+
+  function checkVisible(el, threshold) {
+    const rect = el.getBoundingClientRect();
+    return rect.top < window.innerHeight * (threshold || 0.85);
   }
 
-  window.addEventListener('scroll', checkSlides, { passive: true });
-  checkSlides();
+  function onScroll() {
+    if (story && checkVisible(story)) story.classList.add('is-visible');
+    if (divider && checkVisible(divider)) divider.classList.add('is-visible');
+    if (lines.length && checkVisible(lines[0])) {
+      lines.forEach(function(line) {
+        line.classList.add('is-visible');
+      });
+    }
+    if (footer && checkVisible(footer)) footer.classList.add('is-visible');
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
 })();
