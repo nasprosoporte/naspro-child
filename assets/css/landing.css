@@ -2426,17 +2426,17 @@ body.naspro-menu-open .naspro-burger__btn {
 }
 
 /* ═══════════════════════════════════════
-   MANIFIESTO — Portada de revista
+   MANIFIESTO — Premium minimalista
 ═══════════════════════════════════════ */
 
 #manifiesto {
   background: #000 !important;
-  padding: 120px 0 !important;
+  padding: 140px 0 !important;
   overflow: hidden !important;
 }
 
 .mf-wrap {
-  max-width: 900px !important;
+  max-width: 860px !important;
   margin: 0 auto !important;
   padding: 0 6vw !important;
 }
@@ -2444,23 +2444,23 @@ body.naspro-menu-open .naspro-burger__btn {
 /* Historia */
 .mf-story {
   opacity: 0;
-  transform: translateY(30px);
+  transform: translateY(24px);
   transition: opacity 1s ease, transform 1s ease;
 }
 
 .mf-story.is-visible {
-  opacity: 1;
-  transform: translateY(0);
+  opacity: 1 !important;
+  transform: translateY(0) !important;
 }
 
 .mf-story__text {
   font-family: 'Poppins', sans-serif !important;
-  font-size: clamp(0.95rem, 1.8vw, 1.1rem) !important;
-  line-height: 2 !important;
-  color: rgba(255,255,255,0.5) !important;
+  font-size: clamp(0.88rem, 1.6vw, 1rem) !important;
+  line-height: 2.1 !important;
+  color: rgba(255,255,255,0.45) !important;
   font-weight: 300 !important;
   letter-spacing: 0.02em !important;
-  max-width: 680px !important;
+  max-width: 600px !important;
   margin: 0 !important;
 }
 
@@ -2468,45 +2468,64 @@ body.naspro-menu-open .naspro-burger__btn {
 .mf-divider {
   width: 0;
   height: 1px;
-  background: linear-gradient(90deg, #00b4ff, transparent);
-  margin: 60px 0;
-  transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1) 0.3s;
+  background: linear-gradient(90deg, rgba(0,180,255,0.6), transparent);
+  margin: 80px 0 !important;
+  transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
 }
 
 .mf-divider.is-visible {
-  width: 100%;
+  width: 40% !important;
 }
 
 /* Manifiesto */
 .mf-manifesto {
   display: flex !important;
   flex-direction: column !important;
-  gap: 8px !important;
+  gap: 32px !important;
 }
 
 .mf-line {
   font-family: 'Bebas Neue', sans-serif !important;
-  font-size: clamp(2.2rem, 5.5vw, 5rem) !important;
-  line-height: 1 !important;
-  letter-spacing: 0.03em !important;
-  color: #fff !important;
   margin: 0 !important;
   opacity: 0 !important;
-  transform: translateX(-30px) !important;
-  transition: opacity 0.7s ease calc(var(--i) * 0.1s),
-              transform 0.7s ease calc(var(--i) * 0.1s) !important;
+  transform: translateY(24px) !important;
+  transition: opacity 0.9s ease calc(var(--i) * 0.15s),
+              transform 0.9s ease calc(var(--i) * 0.15s) !important;
 }
 
 .mf-line.is-visible {
   opacity: 1 !important;
-  transform: translateX(0) !important;
+  transform: translateY(0) !important;
 }
 
-.mf-line--accent {
-  color: rgba(255,255,255,0.35) !important;
+/* Nivel 1 — titular principal */
+.mf-line--hero {
+  font-size: clamp(3.5rem, 9vw, 8rem) !important;
+  line-height: 0.92 !important;
+  letter-spacing: 0.02em !important;
+  color: #fff !important;
 }
 
+/* Nivel 2 — frases secundarias */
+.mf-secondary {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 8px !important;
+  padding-left: 4px !important;
+}
+
+.mf-line--mid {
+  font-size: clamp(1.4rem, 3.5vw, 3rem) !important;
+  line-height: 1 !important;
+  letter-spacing: 0.04em !important;
+  color: rgba(255,255,255,0.3) !important;
+}
+
+/* Nivel 3 — remate azul */
 .mf-line--brand {
+  font-size: clamp(1.6rem, 3.8vw, 3.2rem) !important;
+  line-height: 1 !important;
+  letter-spacing: 0.03em !important;
   color: #00b4ff !important;
 }
 
@@ -2515,10 +2534,10 @@ body.naspro-menu-open .naspro-burger__btn {
   display: flex !important;
   align-items: center !important;
   justify-content: space-between !important;
-  margin-top: 60px !important;
+  margin-top: 80px !important;
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.8s ease 0.8s, transform 0.8s ease 0.8s;
+  transform: translateY(16px);
+  transition: opacity 0.8s ease 0.7s, transform 0.8s ease 0.7s;
 }
 
 .mf-footer.is-visible {
@@ -2527,36 +2546,48 @@ body.naspro-menu-open .naspro-burger__btn {
 }
 
 .mf-tagline {
-  font-family: 'Bebas Neue', sans-serif !important;
-  font-size: clamp(1.5rem, 3vw, 2.5rem) !important;
+  font-family: 'Poppins', sans-serif !important;
+  font-size: clamp(0.7rem, 1.2vw, 0.85rem) !important;
   color: rgba(255,255,255,0.2) !important;
-  letter-spacing: 0.1em !important;
+  letter-spacing: 0.25em !important;
+  text-transform: uppercase !important;
 }
 
 .mf-cta {
   display: inline-block !important;
-  padding: 16px 48px !important;
-  border: 1px solid rgba(255,255,255,0.3) !important;
+  padding: 14px 44px !important;
+  border: 1px solid rgba(255,255,255,0.25) !important;
   color: #fff !important;
   font-family: 'Poppins', sans-serif !important;
-  font-size: 0.8rem !important;
+  font-size: 0.75rem !important;
   letter-spacing: 0.2em !important;
   text-transform: uppercase !important;
   text-decoration: none !important;
-  transition: border-color 0.3s ease, color 0.3s ease, background 0.3s ease !important;
+  transition: border-color 0.3s ease, color 0.3s ease !important;
   background: none !important;
 }
 
 .mf-cta:hover {
   border-color: #00b4ff !important;
   color: #00b4ff !important;
-  background: rgba(0,180,255,0.05) !important;
 }
 
 @media (max-width: 768px) {
   .mf-footer {
     flex-direction: column !important;
-    gap: 32px !important;
+    gap: 28px !important;
     align-items: flex-start !important;
+  }
+
+  .mf-line--hero {
+    font-size: clamp(3rem, 14vw, 5rem) !important;
+  }
+
+  .mf-line--mid {
+    font-size: clamp(1.2rem, 6vw, 2rem) !important;
+  }
+
+  .mf-line--brand {
+    font-size: clamp(1.2rem, 5.5vw, 2rem) !important;
   }
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Sección Manifiesto — Portada de revista
+ * Sección Manifiesto — Premium minimalista
  */
 if ( ! defined( 'ABSPATH' ) ) exit;
 ?>
@@ -20,13 +20,12 @@ if ( ! defined( 'ABSPATH' ) ) exit;
     <div class="mf-divider"></div>
 
     <div class="mf-manifesto">
-      <p class="mf-line" style="--i:1">No naciste para lo ordinario.</p>
-      <p class="mf-line" style="--i:2">Entrenas diferente.</p>
-      <p class="mf-line mf-line--accent" style="--i:3">Piensas diferente.</p>
-      <p class="mf-line" style="--i:4">Te preparas diferente.</p>
-      <p class="mf-line mf-line--accent" style="--i:5">Cada detalle importa.</p>
-      <p class="mf-line" style="--i:6">Cada decisión cuenta.</p>
-      <p class="mf-line mf-line--brand" style="--i:7">Bienvenido al movimiento NASPRO.</p>
+      <p class="mf-line mf-line--hero" style="--i:1">No naciste para<br>lo ordinario.</p>
+      <div class="mf-secondary">
+        <p class="mf-line mf-line--mid" style="--i:2">Entrenas diferente.</p>
+        <p class="mf-line mf-line--mid" style="--i:3">Cada detalle importa.</p>
+      </div>
+      <p class="mf-line mf-line--brand" style="--i:4">Bienvenido al movimiento NASPRO.</p>
     </div>
 
     <div class="mf-footer">
