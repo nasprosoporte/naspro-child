@@ -200,18 +200,16 @@
   const slides = document.querySelectorAll('.mf-slide');
   if (!slides.length) return;
 
-  const observer = new IntersectionObserver(function(entries) {
-    entries.forEach(function(entry) {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('is-visible');
+  function checkSlides() {
+    slides.forEach(function(slide) {
+      const rect = slide.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+      if (rect.top < windowHeight * 0.75) {
+        slide.classList.add('is-visible');
       }
     });
-  }, {
-    threshold: 0.4,
-    rootMargin: '0px 0px -10% 0px'
-  });
+  }
 
-  slides.forEach(function(slide) {
-    observer.observe(slide);
-  });
+  window.addEventListener('scroll', checkSlides, { passive: true });
+  checkSlides();
 })();

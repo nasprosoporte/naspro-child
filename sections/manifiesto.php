@@ -42,9 +42,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
       </div>
 
       <div class="mf-slide mf-slide--final" data-color="white">
-        <span class="mf-welcome">Bienvenido al movimiento.</span>
         <span class="mf-brand">NASPRO.</span>
-        <span class="mf-tagline">Respira sin límites.</span>
         <a href="#producto" class="mf-cta">Únete ahora</a>
       </div>
 
