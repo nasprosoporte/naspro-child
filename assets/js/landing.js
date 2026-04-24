@@ -103,7 +103,6 @@
   }
 })();
 
-// Swap imagen frontal/trasera con fade
 (function() {
   const btn = document.getElementById('abSwap');
   const img = document.getElementById('abFloatImg');
@@ -112,18 +111,36 @@
   const front = 'https://naspro.es/wp-content/uploads/2026/04/Packaging-NF-scaled.png';
   const back = 'https://naspro.es/wp-content/uploads/2026/04/Mockup_Back-NF-scaled.png';
   let showing = 'front';
+  let transitioning = false;
+
+  function swap() {
+    if (transitioning) return;
+    transitioning = true;
+
+    img.style.transition = 'opacity 0.35s ease';
+    img.style.opacity = '0';
+
+    setTimeout(function() {
+      showing = showing === 'front' ? 'back' : 'front';
+      img.src = showing === 'front' ? front : back;
+      img.onload = function() {
+        img.style.opacity = '1';
+        setTimeout(function() { transitioning = false; }, 350);
+      };
+      // Fallback por si onload no se dispara
+      setTimeout(function() {
+        img.style.opacity = '1';
+        transitioning = false;
+      }, 600);
+      const label = btn.querySelector('span');
+      if (label) label.textContent = showing === 'front' ? 'Ver trasera' : 'Ver frontal';
+    }, 350);
+  }
 
   ['click', 'touchend'].forEach(function(evt) {
     btn.addEventListener(evt, function(e) {
       e.preventDefault();
-      img.style.opacity = '0';
-      img.style.transition = 'opacity 0.3s ease';
-      setTimeout(function() {
-        showing = showing === 'front' ? 'back' : 'front';
-        img.src = showing === 'front' ? front : back;
-        img.style.opacity = '1';
-        btn.querySelector('span') && (btn.querySelector('span').textContent = showing === 'front' ? 'Ver trasera' : 'Ver frontal');
-      }, 300);
+      swap();
     });
   });
 })();
