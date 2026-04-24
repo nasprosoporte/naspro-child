@@ -2544,3 +2544,31 @@ body.naspro-menu-open .naspro-burger__btn {
     font-size: clamp(3.5rem, 18vw, 7rem);
   }
 }
+
+#manifiesto {
+  background: #000 !important;
+}
+
+#manifiesto .mf-slide {
+  min-height: 100vh !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  padding: 0 6vw !important;
+}
+
+#manifiesto .mf-slide span {
+  display: block !important;
+  font-family: 'Bebas Neue', sans-serif !important;
+  font-size: clamp(4rem, 16vw, 14rem) !important;
+  line-height: 0.9 !important;
+  color: #fff !important;
+}
+
+#manifiesto .mf-accent {
+  color: #00b4ff !important;
+}
+
+#manifiesto .mf-slide[data-color="cyan"] span {
+  color: #00b4ff !important;
+}
