@@ -20,12 +20,13 @@ if ( ! defined( 'ABSPATH' ) ) exit;
     <div class="mf-divider"></div>
 
     <div class="mf-manifesto">
-      <p class="mf-line mf-line--hero" style="--i:1">No naciste para<br>lo ordinario.</p>
+      <p class="mf-line mf-line--hero" style="--i:1">No naciste para lo ordinario.</p>
       <div class="mf-secondary">
-        <p class="mf-line mf-line--mid" style="--i:2">Entrenas diferente.</p>
-        <p class="mf-line mf-line--mid" style="--i:3">Cada detalle importa.</p>
+        <p class="mf-line mf-line--mid" style="--i:2">Cuidas lo que otros ignoran.</p>
+        <p class="mf-line mf-line--mid" style="--i:3">Porque cada respiración cuenta.</p>
+        <p class="mf-line mf-line--mid" style="--i:4">Y tú eliges estar un paso por delante.</p>
       </div>
-      <p class="mf-line mf-line--brand" style="--i:4">Bienvenido al movimiento NASPRO.</p>
+      <p class="mf-line mf-line--brand" style="--i:5">Bienvenido al movimiento NASPRO.</p>
     </div>
 
     <div class="mf-footer">

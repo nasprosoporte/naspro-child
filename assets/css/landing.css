@@ -2445,7 +2445,7 @@ body.naspro-menu-open .naspro-burger__btn {
 .mf-story {
   opacity: 0;
   transform: translateY(24px);
-  transition: opacity 1s ease, transform 1s ease;
+  transition: opacity 1.2s ease 0.3s, transform 1.2s ease 0.3s !important;
 }
 
 .mf-story.is-visible {
@@ -2500,7 +2500,7 @@ body.naspro-menu-open .naspro-burger__btn {
 
 /* Nivel 1 — titular principal */
 .mf-line--hero {
-  font-size: clamp(3.5rem, 9vw, 8rem) !important;
+  font-size: clamp(2.8rem, 6.5vw, 6rem) !important;
   line-height: 0.92 !important;
   letter-spacing: 0.02em !important;
   color: #fff !important;
