@@ -2271,14 +2271,22 @@ body.naspro-menu-open .naspro-burger__btn {
   overflow: hidden;
 }
 
+.faq-question:focus,
+.faq-question:hover,
+.faq-question:focus-visible {
+  background: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
 .faq-num-bg {
   position: absolute;
   left: -8px;
   top: 50%;
   transform: translateY(-50%);
   font-family: 'Bebas Neue', sans-serif;
-  font-size: 7rem;
-  color: rgba(255,255,255,0.03);
+  font-size: 5rem;
+  color: rgba(255,255,255,0.04);
   letter-spacing: 0.02em;
   line-height: 1;
   pointer-events: none;
