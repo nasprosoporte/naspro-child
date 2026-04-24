@@ -67,7 +67,7 @@ return [
         'variante'    => '30 tiras cada mes',
         'precio'      => '9,99€',
         'precio_desc' => 'Ahorra un 23%',
-        'imagen'      => 'https://naspro.es/wp-content/uploads/2026/04/Sub-mensual-NF.png',
+        'imagen'      => 'https://naspro.es/wp-content/uploads/2026/04/Sub-mensual-NF_rotate-02-scaled.png',
         'destacado'   => false,
         'badge'       => '',
         'beneficios'  => [
