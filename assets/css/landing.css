@@ -2461,6 +2461,18 @@ body.naspro-menu-open .naspro-burger__btn {
   transform: translateY(0);
 }
 
+#manifiesto .mf-slide {
+  opacity: 0 !important;
+  transform: translateY(60px) !important;
+  transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 1.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+#manifiesto .mf-slide.is-visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
 .mf-slide span {
   display: block;
   font-family: 'Bebas Neue', sans-serif;
@@ -2571,4 +2583,35 @@ body.naspro-menu-open .naspro-burger__btn {
 
 #manifiesto .mf-slide[data-color="cyan"] span {
   color: #00b4ff !important;
+}
+
+#manifiesto .mf-slide--final {
+  align-items: center !important;
+  text-align: center !important;
+  gap: 0 !important;
+}
+
+#manifiesto .mf-welcome {
+  font-family: 'Poppins', sans-serif !important;
+  font-size: clamp(0.9rem, 2vw, 1.1rem) !important;
+  letter-spacing: 0.2em !important;
+  text-transform: uppercase !important;
+  color: rgba(255,255,255,0.5) !important;
+  margin-bottom: 24px !important;
+}
+
+#manifiesto .mf-brand {
+  font-size: clamp(6rem, 22vw, 18rem) !important;
+  line-height: 0.85 !important;
+  margin-bottom: 0 !important;
+}
+
+#manifiesto .mf-tagline {
+  font-family: 'Poppins', sans-serif !important;
+  font-size: clamp(0.85rem, 1.8vw, 1rem) !important;
+  letter-spacing: 0.15em !important;
+  text-transform: uppercase !important;
+  color: #00b4ff !important;
+  margin-top: 16px !important;
+  margin-bottom: 48px !important;
 }

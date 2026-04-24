@@ -207,7 +207,8 @@
       }
     });
   }, {
-    threshold: 0.3
+    threshold: 0.4,
+    rootMargin: '0px 0px -10% 0px'
   });
 
   slides.forEach(function(slide) {
