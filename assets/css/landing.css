@@ -2286,7 +2286,7 @@ body.naspro-menu-open .naspro-burger__btn {
   transform: translateY(-50%);
   font-family: 'Bebas Neue', sans-serif;
   font-size: 5rem;
-  color: rgba(255,255,255,0.04);
+  color: rgba(0, 180, 255, 0.08);
   letter-spacing: 0.02em;
   line-height: 1;
   pointer-events: none;
