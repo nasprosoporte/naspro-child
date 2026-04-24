@@ -145,3 +145,30 @@
     img.style.transform = '';
   });
 })();
+
+// FAQ — Editorial de alta costura
+(function() {
+  const items = document.querySelectorAll('.faq-item');
+  if (!items.length) return;
+
+  items.forEach(function(item) {
+    const btn = item.querySelector('.faq-question');
+    if (!btn) return;
+
+    btn.addEventListener('click', function() {
+      const isOpen = item.classList.contains('is-open');
+
+      items.forEach(function(i) {
+        i.classList.remove('is-open');
+        i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+        i.querySelector('.faq-answer').setAttribute('aria-hidden', 'true');
+      });
+
+      if (!isOpen) {
+        item.classList.add('is-open');
+        btn.setAttribute('aria-expanded', 'true');
+        item.querySelector('.faq-answer').setAttribute('aria-hidden', 'false');
+      }
+    });
+  });
+})();

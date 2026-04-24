@@ -38,6 +38,7 @@ get_template_part( 'sections/menu' );
   <?php get_template_part( 'sections/capas' ); ?>
   <?php get_template_part( 'sections/about' ); ?>
   <?php get_template_part( 'sections/producto' ); ?>
+  <?php get_template_part( 'sections/faq' ); ?>
 
 </main>
 
