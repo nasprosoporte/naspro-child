@@ -37,6 +37,7 @@ get_template_part( 'sections/menu' );
   <?php get_template_part( 'sections/hero' ); ?>
   <?php get_template_part( 'sections/capas' ); ?>
   <?php get_template_part( 'sections/about' ); ?>
+  <?php get_template_part( 'sections/historia' ); ?>
   <?php get_template_part( 'sections/manifiesto' ); ?>
   <?php get_template_part( 'sections/producto' ); ?>
   <?php get_template_part( 'sections/faq' ); ?>
