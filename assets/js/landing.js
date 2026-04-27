@@ -20,7 +20,6 @@
   onReady(function () {
     initMenuFlotante();
     initCapas();
-    initAbout();
   });
 
 
