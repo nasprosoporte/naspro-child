@@ -222,35 +222,3 @@
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 })();
-
-// Historia — Scroll narrativo
-(function() {
-  const blocks = document.querySelectorAll('.hs-block');
-  if (!blocks.length) return;
-
-  function checkBlocks() {
-    const windowHeight = window.innerHeight;
-    const centerY = windowHeight * 0.5;
-
-    blocks.forEach(function(block) {
-      const rect = block.getBoundingClientRect();
-      const blockCenter = rect.top + rect.height / 2;
-      const distanceFromCenter = Math.abs(blockCenter - centerY);
-      const threshold = windowHeight * 0.55;
-
-      if (distanceFromCenter < threshold) {
-        block.classList.add('is-visible');
-        block.classList.remove('is-hidden');
-      } else if (rect.bottom < 0) {
-        block.classList.remove('is-visible');
-        block.classList.add('is-hidden');
-      } else {
-        block.classList.remove('is-visible');
-        block.classList.remove('is-hidden');
-      }
-    });
-  }
-
-  window.addEventListener('scroll', checkBlocks, { passive: true });
-  checkBlocks();
-})();
