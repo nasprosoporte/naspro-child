@@ -2591,3 +2591,95 @@ body.naspro-menu-open .naspro-burger__btn {
     font-size: clamp(1.2rem, 5.5vw, 2rem) !important;
   }
 }
+
+/* ═══════════════════════════════════════
+   HISTORIA — Scroll narrativo
+═══════════════════════════════════════ */
+
+#historia {
+  background: #000 !important;
+  position: relative !important;
+}
+
+.hs-wrap {
+  max-width: 760px !important;
+  margin: 0 auto !important;
+  padding: 0 6vw !important;
+}
+
+.hs-block {
+  min-height: 100vh !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  gap: 16px !important;
+  opacity: 0 !important;
+  transform: translateY(40px) !important;
+  transition: none !important;
+}
+
+.hs-block.is-visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 1.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.hs-block.is-hidden {
+  opacity: 0 !important;
+  transform: translateY(-30px) !important;
+  transition: opacity 0.6s ease,
+              transform 0.6s ease !important;
+}
+
+.hs-text {
+  font-family: 'Bebas Neue', sans-serif !important;
+  font-size: clamp(2.8rem, 7vw, 6.5rem) !important;
+  line-height: 0.95 !important;
+  letter-spacing: 0.02em !important;
+  color: #fff !important;
+  margin: 0 !important;
+}
+
+.hs-text--sub {
+  font-family: 'Poppins', sans-serif !important;
+  font-size: clamp(1rem, 2.2vw, 1.4rem) !important;
+  line-height: 1.7 !important;
+  letter-spacing: 0.03em !important;
+  color: rgba(255,255,255,0.4) !important;
+  font-weight: 300 !important;
+}
+
+.hs-text--accent {
+  color: #00b4ff !important;
+}
+
+.hs-text--final {
+  font-size: clamp(3.5rem, 10vw, 9rem) !important;
+  line-height: 0.9 !important;
+}
+
+.hs-block--final {
+  align-items: flex-start !important;
+  gap: 40px !important;
+}
+
+.hs-logo {
+  font-family: 'Bebas Neue', sans-serif !important;
+  font-size: clamp(0.8rem, 1.5vw, 1rem) !important;
+  letter-spacing: 0.4em !important;
+  color: rgba(255,255,255,0.2) !important;
+  border-top: 1px solid rgba(255,255,255,0.1) !important;
+  padding-top: 20px !important;
+  width: 100% !important;
+}
+
+@media (max-width: 768px) {
+  .hs-text {
+    font-size: clamp(2.2rem, 12vw, 3.5rem) !important;
+  }
+
+  .hs-text--final {
+    font-size: clamp(2.8rem, 14vw, 5rem) !important;
+  }
+}
