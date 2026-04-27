@@ -222,26 +222,3 @@
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 })();
-
-// Historia — Stacking Cards
-(function() {
-  const cards = document.querySelectorAll('.sc-card');
-  if (!cards.length) return;
-
-  function updateCards() {
-    cards.forEach(function(card, index) {
-      const rect = card.getBoundingClientRect();
-      const progress = Math.max(0, Math.min(1, -rect.top / window.innerHeight));
-      const scale = 1 - (progress * 0.04);
-      const brightness = 1 - (progress * 0.15);
-
-      card.style.transform = 'scale(' + scale + ')';
-      card.style.filter = 'brightness(' + brightness + ')';
-      card.style.transformOrigin = 'center top';
-      card.style.zIndex = index + 1;
-    });
-  }
-
-  window.addEventListener('scroll', updateCards, { passive: true });
-  updateCards();
-})();
