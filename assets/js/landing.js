@@ -109,6 +109,11 @@
 
   const front = 'https://naspro.es/wp-content/uploads/2026/04/Packaging-NF-scaled.png';
   const back = 'https://naspro.es/wp-content/uploads/2026/04/Mockup_Back-NF-scaled.png';
+
+  // Precargar imagen trasera
+  const preload = new Image();
+  preload.src = back;
+
   let showing = 'front';
   let transitioning = false;
 
