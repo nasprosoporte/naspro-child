@@ -209,22 +209,21 @@
 
   if (!story && !manifesto) return;
 
-  function checkVisible(el, threshold) {
-    const rect = el.getBoundingClientRect();
-    return rect.top < window.innerHeight * (threshold || 0.85);
-  }
+  const targets = [];
+  if (story) targets.push(story);
+  if (divider) targets.push(divider);
+  if (manifesto) targets.push(manifesto);
+  lines.forEach(function(line) { targets.push(line); });
+  if (footer) targets.push(footer);
 
-  function onScroll() {
-    if (story && checkVisible(story)) story.classList.add('is-visible');
-    if (divider && checkVisible(divider)) divider.classList.add('is-visible');
-    if (lines.length && checkVisible(lines[0])) {
-      lines.forEach(function(line) {
-        line.classList.add('is-visible');
-      });
-    }
-    if (footer && checkVisible(footer)) footer.classList.add('is-visible');
-  }
+  const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
 
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
+  targets.forEach(function(el) { observer.observe(el); });
 })();
