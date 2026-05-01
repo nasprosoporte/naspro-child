@@ -203,10 +203,11 @@
 (function() {
   const story = document.querySelector('.mf-story');
   const divider = document.querySelector('.mf-divider');
+  const manifesto = document.querySelector('.mf-manifesto');
   const lines = document.querySelectorAll('.mf-line');
   const footer = document.querySelector('.mf-footer');
 
-  if (!story) return;
+  if (!story && !manifesto) return;
 
   function checkVisible(el, threshold) {
     const rect = el.getBoundingClientRect();

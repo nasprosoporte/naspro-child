@@ -160,6 +160,23 @@ if ( ! defined( 'ABSPATH' ) ) exit;
       </article>
 
     </div>
+
+    <!-- Cierre emocional — movido desde sections/manifiesto.php -->
+    <div class="mf-manifesto">
+      <p class="mf-line mf-line--hero" style="--i:1">No naciste para lo ordinario.</p>
+      <div class="mf-secondary">
+        <p class="mf-line mf-line--mid" style="--i:2">Cuidas lo que otros ignoran.</p>
+        <p class="mf-line mf-line--mid" style="--i:3">Porque cada respiración cuenta.</p>
+        <p class="mf-line mf-line--mid" style="--i:4">Y tú eliges estar un paso por delante.</p>
+      </div>
+      <p class="mf-line mf-line--brand" style="--i:5">Bienvenido al movimiento NASPRO.</p>
+    </div>
+
+    <div class="mf-footer">
+      <span class="mf-tagline">Respira sin límites.</span>
+      <a href="#producto" class="mf-cta">Únete ahora</a>
+    </div>
+
   </div>
 
 </section>
