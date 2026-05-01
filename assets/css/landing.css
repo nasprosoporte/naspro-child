@@ -2599,7 +2599,7 @@ body.naspro-menu-open .naspro-burger__btn {
 #footer {
   background: #080808 !important;
   border-top: 1px solid rgba(255,255,255,0.06) !important;
-  padding: 80px 0 40px !important;
+  padding: 60px 0 32px !important;
 }
 
 .ft-wrap {
@@ -2611,15 +2611,15 @@ body.naspro-menu-open .naspro-burger__btn {
 .ft-top {
   display: flex !important;
   justify-content: space-between !important;
-  gap: 60px !important;
-  margin-bottom: 80px !important;
+  gap: 40px !important;
+  margin-bottom: 48px !important;
 }
 
 .ft-brand {
   display: flex !important;
   flex-direction: column !important;
   gap: 12px !important;
-  max-width: 200px !important;
+  max-width: 160px !important;
 }
 
 .ft-logo {
