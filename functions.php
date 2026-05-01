@@ -39,8 +39,8 @@ function naspro_child_enqueue_styles() {
    ========================================================= */
 add_action( 'wp_enqueue_scripts', 'naspro_landing_assets' );
 function naspro_landing_assets() {
-    // Solo cargar en páginas que usen la plantilla Naspro Landing
-    if ( ! is_page_template( 'page-naspro.php' ) ) {
+    // Solo cargar en páginas que usen la plantilla Naspro Landing o Legal
+    if ( ! is_page_template( 'page-naspro.php' ) && ! is_page_template( 'page-legal.php' ) ) {
         return;
     }
 
