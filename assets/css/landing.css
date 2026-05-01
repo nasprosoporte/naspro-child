@@ -2482,6 +2482,7 @@ body.naspro-menu-open .naspro-burger__btn {
   display: flex !important;
   flex-direction: column !important;
   gap: 32px !important;
+  margin-top: 80px !important;
 }
 
 .mf-line {
