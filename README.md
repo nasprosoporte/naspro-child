@@ -46,7 +46,7 @@ La idea es que el cliente pueda comprar en pocos clics:
 - Mantener un enfoque wellness, deporte, descanso o uso diario.
 - Si falta un dato, dejarlo como pendiente.
 - Trabajar paso a paso.
-
+uri
 ## Estructura del  tema
 
 ```text
