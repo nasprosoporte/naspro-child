@@ -39,8 +39,7 @@ function naspro_child_enqueue_styles() {
    ========================================================= */
 add_action( 'wp_enqueue_scripts', 'naspro_landing_assets' );
 function naspro_landing_assets() {
-    $template = get_page_template_slug();
-    if ( $template !== 'page-naspro.php' && $template !== 'page-legal.php' ) {
+    if ( ! is_page_template( 'page-naspro.php' ) && ! is_page() ) {
         return;
     }
 
