@@ -16,15 +16,6 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
       <div class="ft-links">
         <div class="ft-col">
-          <span class="ft-col__title">Navegación</span>
-          <a href="#hero">Inicio</a>
-          <a href="#capas">Cómo funciona</a>
-          <a href="#about-naspro">Sobre NASPRO</a>
-          <a href="#producto">Tienda</a>
-          <a href="#faq">FAQ</a>
-        </div>
-
-        <div class="ft-col">
           <span class="ft-col__title">Legal</span>
           <a href="/aviso-legal">Aviso legal</a>
           <a href="/privacidad">Política de privacidad</a>
