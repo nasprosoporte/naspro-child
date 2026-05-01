@@ -40,6 +40,7 @@ get_template_part( 'sections/menu' );
   <?php get_template_part( 'sections/manifiesto' ); ?>
   <?php get_template_part( 'sections/producto' ); ?>
   <?php get_template_part( 'sections/faq' ); ?>
+  <?php get_template_part( 'sections/footer' ); ?>
 
 </main>
 
