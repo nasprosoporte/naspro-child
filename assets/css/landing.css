@@ -2719,3 +2719,120 @@ body.naspro-menu-open .naspro-burger__btn {
     text-align: center !important;
   }
 }
+
+/* ═══════════════════════════════════════
+   PÁGINAS LEGALES
+═══════════════════════════════════════ */
+
+.naspro-legal-body {
+  background: #080808 !important;
+  color: #fff !important;
+}
+
+.legal-page {
+  min-height: 100vh !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.legal-header {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding: 32px 6vw !important;
+  border-bottom: 1px solid rgba(255,255,255,0.06) !important;
+}
+
+.legal-header__logo {
+  font-family: 'Bebas Neue', sans-serif !important;
+  font-size: 1.8rem !important;
+  letter-spacing: 0.1em !important;
+  color: #fff !important;
+  text-decoration: none !important;
+}
+
+.legal-header__back {
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 0.78rem !important;
+  letter-spacing: 0.15em !important;
+  text-transform: uppercase !important;
+  color: rgba(255,255,255,0.4) !important;
+  text-decoration: none !important;
+  transition: color 0.2s ease !important;
+}
+
+.legal-header__back:hover {
+  color: #fff !important;
+}
+
+.legal-main {
+  flex: 1 !important;
+  padding: 80px 6vw !important;
+}
+
+.legal-wrap {
+  max-width: 720px !important;
+  margin: 0 auto !important;
+}
+
+.legal-title {
+  font-family: 'Bebas Neue', sans-serif !important;
+  font-size: clamp(2.5rem, 6vw, 5rem) !important;
+  letter-spacing: 0.04em !important;
+  color: #fff !important;
+  margin: 0 0 60px 0 !important;
+  line-height: 1 !important;
+}
+
+.legal-content {
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 0.92rem !important;
+  line-height: 1.9 !important;
+  color: rgba(255,255,255,0.55) !important;
+  font-weight: 300 !important;
+}
+
+.legal-content h2,
+.legal-content h3 {
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 0.78rem !important;
+  letter-spacing: 0.2em !important;
+  text-transform: uppercase !important;
+  color: rgba(255,255,255,0.9) !important;
+  font-weight: 600 !important;
+  margin: 40px 0 16px 0 !important;
+}
+
+.legal-content p {
+  margin: 0 0 20px 0 !important;
+}
+
+.legal-content a {
+  color: #00b4ff !important;
+  text-decoration: none !important;
+}
+
+.legal-content a:hover {
+  text-decoration: underline !important;
+}
+
+.legal-content strong {
+  color: rgba(255,255,255,0.8) !important;
+  font-weight: 500 !important;
+}
+
+.legal-content ul,
+.legal-content ol {
+  padding-left: 24px !important;
+  margin: 0 0 20px 0 !important;
+}
+
+.legal-content li {
+  margin-bottom: 8px !important;
+}
+
+@media (max-width: 768px) {
+  .legal-main {
+    padding: 48px 6vw !important;
+  }
+}
