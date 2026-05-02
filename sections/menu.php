@@ -24,10 +24,8 @@ if ( ! defined( 'ABSPATH' ) ) exit;
   <aside class="naspro-drawer__panel" role="dialog" aria-label="Menú NASPRO">
     <button class="naspro-drawer__close" type="button" aria-label="Cerrar menú">×</button>
     <div class="naspro-drawer__brand">NASPRO</div>
-    <a href="#hero">Inicio</a>
-    <a href="#capas">Cómo funciona</a>
-    <a href="#about-naspro">Sobre Naspro</a>
-    <a href="#manifiesto">Nuestra historia</a>
+    <a href="#capas">Tecnología</a>
+    <a href="#about-naspro">Qué es NASPRO</a>
     <a href="#faq">FAQ</a>
     <a href="#producto" class="naspro-drawer__cta">Comprar</a>
   </aside>
