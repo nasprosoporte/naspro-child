@@ -22,21 +22,20 @@ if ( ! defined( 'ABSPATH' ) ) exit;
           Más rendimiento.
         </h2>
         <p class="ab-lead">
-          NASPRO abre tu respiración cuando más lo necesitas: entreno, competición o descanso.
-          Tracción nasal precisa, ajuste estable y confort real — sin distraerte del momento.
+          NASPRO está diseñada para quienes cuidan cada detalle de su preparación. Una tira nasal ligera, cómoda y estable para acompañarte en deporte, foco y descanso.
         </p>
         <div class="ab-stats">
           <div>
-            <span class="ab-stat__num">+30%</span>
-            <span class="ab-stat__label">Flujo de aire</span>
+            <span class="ab-stat__num">AJUSTE</span>
+            <span class="ab-stat__label">estable</span>
           </div>
           <div>
-            <span class="ab-stat__num">4 capas</span>
-            <span class="ab-stat__label">De ingeniería</span>
+            <span class="ab-stat__num">4 CAPAS</span>
+            <span class="ab-stat__label">de ingeniería</span>
           </div>
           <div>
-            <span class="ab-stat__num">100%</span>
-            <span class="ab-stat__label">Sin residuos</span>
+            <span class="ab-stat__num">RETIRADA</span>
+            <span class="ab-stat__label">limpia</span>
           </div>
         </div>
         <a href="#capas" class="ab-cta">
@@ -116,7 +115,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
           </svg>
         </div>
         <h3 class="ab-card__title">Tecnología avanzada</h3>
-        <p class="ab-card__text">Tracción nasal precisa con materiales técnicos y duraderos, diseñados para el movimiento.</p>
+        <p class="ab-card__text">Diseño técnico de 4 capas con materiales ligeros, flexibles y pensados para el movimiento.</p>
         <hr class="ab-card__line">
       </article>
 
@@ -129,7 +128,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
           </svg>
         </div>
         <h3 class="ab-card__title">Ergonomía deportiva</h3>
-        <p class="ab-card__text">Diseño cómodo, estable y pensado para movimiento continuo de alta intensidad.</p>
+        <p class="ab-card__text">Diseño cómodo, estable y flexible para integrarse de forma natural en tu rutina.</p>
         <hr class="ab-card__line">
       </article>
 
@@ -142,7 +141,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
           </svg>
         </div>
         <h3 class="ab-card__title">Validado por atletas</h3>
-        <p class="ab-card__text">Probado en entrenamientos reales y escenarios de alta exigencia durante meses.</p>
+        <p class="ab-card__text">Probado en entrenamientos reales y momentos de alta exigencia.</p>
         <hr class="ab-card__line">
       </article>
 
@@ -154,8 +153,8 @@ if ( ! defined( 'ABSPATH' ) ) exit;
             <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </div>
-        <h3 class="ab-card__title">Estándares EU</h3>
-        <p class="ab-card__text">Calidad, trazabilidad y seguridad certificadas bajo los más exigentes estándares europeos.</p>
+        <h3 class="ab-card__title">Diseño responsable</h3>
+        <p class="ab-card__text">Cada detalle está pensado para ofrecer una experiencia cómoda, clara y coherente con el uso del producto.</p>
         <hr class="ab-card__line">
       </article>
 
