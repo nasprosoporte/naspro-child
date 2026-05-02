@@ -29,9 +29,9 @@ return [
         'destacado'   => false,
         'badge'       => '',
         'beneficios'  => [
-            'Respira sin límites',
-            'Diseño ergonómico de 4 capas',
-            'Resistente al sudor',
+            'Ideal para empezar',
+            'Diseño técnico de 4 capas',
+            'Ajuste estable durante el uso',
         ],
         'cta'         => 'Comprar ahora',
         'shopify_url' => 'https://tienda.naspro.es/products/naspro-sport-30-tiras-nasales',
@@ -50,9 +50,9 @@ return [
         'destacado'   => true,     // el "favorito", destacado visualmente
         'badge'       => 'Más vendido',
         'beneficios'  => [
-            'Doble unidad, mejor precio',
-            'Envío siempre gratis',
-            'Ideal para uso regular',
+            'Dos packs para tu rutina',
+            'Mejor precio por unidad',
+            'Perfecto para repetir o compartir',
         ],
         'cta'         => 'Comprar Pack',
         'shopify_url' => 'https://tienda.naspro.es/products/pack-duo-naspro-60-tiras-nasales',
@@ -71,9 +71,9 @@ return [
         'destacado'   => false,
         'badge'       => '',
         'beneficios'  => [
-            'Envío automático cada mes',
-            'Cancela cuando quieras',
-            'Primer mes con descuento',
+            'Recibe NASPRO cada mes',
+            '3 entregas mensuales',
+            'Pago único de 29,97€',
         ],
         'cta'         => 'Suscribirme',
         'shopify_url' => '#',
