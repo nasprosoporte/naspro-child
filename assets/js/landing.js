@@ -105,6 +105,8 @@
 (function() {
   const btn = document.getElementById('abSwap');
   const img = document.getElementById('abFloatImg');
+  const idxNum = document.getElementById('abIdxNum');
+  const idxLabel = document.getElementById('abIdxLabel');
   if (!btn || !img) return;
 
   const front = 'https://naspro.es/wp-content/uploads/2026/04/Packaging-NF-scaled.png';
@@ -143,6 +145,8 @@
 
       const label = btn.querySelector('span');
       if (label) label.textContent = showing === 'front' ? 'Ver trasera' : 'Ver frontal';
+      if (idxNum) idxNum.textContent = showing === 'front' ? '01' : '02';
+      if (idxLabel) idxLabel.textContent = showing === 'front' ? 'Frontal' : 'Trasera';
     }, 400);
   }
 
