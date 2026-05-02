@@ -21,6 +21,6 @@ if ( ! defined( 'ABSPATH' ) ) exit;
     <div class="brand">NASPRO</div>
     <h1>Respira sin<br>límites</h1>
     <p>Rendimiento. Respiración. Equilibrio.</p>
-    <a href="#capas" class="btn">Descubre NASPRO</a>
+    <a href="#about-naspro" class="btn">Descubre NASPRO</a>
   </div>
 </section>
