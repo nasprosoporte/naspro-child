@@ -161,6 +161,9 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
     </div>
 
+    <!-- Separador de registro -->
+    <div class="mf-divider"></div>
+
     <!-- Cierre emocional — movido desde sections/manifiesto.php -->
     <div class="mf-manifesto">
       <p class="mf-line mf-line--hero" style="--i:1">No naciste para lo ordinario.</p>

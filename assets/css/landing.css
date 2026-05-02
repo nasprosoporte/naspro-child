@@ -2481,7 +2481,7 @@ body.naspro-menu-open .naspro-burger__btn {
 .mf-manifesto {
   display: flex !important;
   flex-direction: column !important;
-  gap: 32px !important;
+  gap: 0 !important;
   margin-top: 80px !important;
 }
 
@@ -2505,6 +2505,7 @@ body.naspro-menu-open .naspro-burger__btn {
   line-height: 0.92 !important;
   letter-spacing: 0.02em !important;
   color: #fff !important;
+  margin-bottom: 48px !important;
 }
 
 /* Nivel 2 — frases secundarias */
@@ -2513,13 +2514,14 @@ body.naspro-menu-open .naspro-burger__btn {
   flex-direction: column !important;
   gap: 8px !important;
   padding-left: 4px !important;
+  margin-bottom: 32px !important;
 }
 
 .mf-line--mid {
   font-size: clamp(1.4rem, 3.5vw, 3rem) !important;
   line-height: 1 !important;
   letter-spacing: 0.04em !important;
-  color: rgba(255,255,255,0.3) !important;
+  color: rgba(255,255,255,0.45) !important;
 }
 
 /* Nivel 3 — remate azul */
@@ -2527,7 +2529,7 @@ body.naspro-menu-open .naspro-burger__btn {
   font-size: clamp(1.6rem, 3.8vw, 3.2rem) !important;
   line-height: 1 !important;
   letter-spacing: 0.03em !important;
-  color: #00b4ff !important;
+  color: var(--naspro-cyan) !important;
 }
 
 /* Footer */
@@ -2549,7 +2551,7 @@ body.naspro-menu-open .naspro-burger__btn {
 .mf-tagline {
   font-family: 'Poppins', sans-serif !important;
   font-size: clamp(0.7rem, 1.2vw, 0.85rem) !important;
-  color: rgba(255,255,255,0.2) !important;
+  color: rgba(255,255,255,0.35) !important;
   letter-spacing: 0.25em !important;
   text-transform: uppercase !important;
 }
