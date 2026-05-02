@@ -26,6 +26,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
     <div class="naspro-drawer__brand">NASPRO</div>
     <a href="#about-naspro">Qué es NASPRO</a>
     <a href="#capas">Tecnología</a>
+    <a href="#testimonios">Opiniones</a>
     <a href="#faq">FAQ</a>
     <a href="#producto" class="naspro-drawer__cta">Comprar</a>
   </aside>
