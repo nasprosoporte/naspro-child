@@ -8,32 +8,32 @@ $faqs = [
   [
     'num' => '01',
     'pregunta' => '¿Cómo se usa NASPRO?',
-    'respuesta' => 'Limpia y seca la zona del puente nasal. Dobla ligeramente la tira por el centro y aplícala sobre la nariz siguiendo su forma natural. Presiona suavemente los extremos para fijarla. Lista en segundos.'
+    'respuesta' => 'Limpia y seca la zona del puente nasal. Dobla ligeramente la tira por el centro, colócala siguiendo la forma natural de la nariz y presiona suavemente los extremos para fijarla. Lista en segundos.'
   ],
   [
     'num' => '02',
-    'pregunta' => '¿Se mantiene durante el entrenamiento?',
-    'respuesta' => 'Sí. NASPRO está diseñada para aguantar sesiones de alta intensidad. Su adhesivo técnico mantiene la fijación incluso con sudor, agua o movimiento brusco.'
+    'pregunta' => '¿Qué se nota al usarla?',
+    'respuesta' => 'La sensación puede variar según cada persona, pero quienes la prueban suelen destacar comodidad, ligereza y una sensación de mayor amplitud durante el uso.'
   ],
   [
     'num' => '03',
-    'pregunta' => '¿Cuánto tiempo dura cada tira?',
-    'respuesta' => 'Cada tira está diseñada para un uso de hasta 12 horas. Úsala durante el entreno, la competición o mientras duermes y retírala al terminar.'
+    'pregunta' => '¿Se mantiene durante el entrenamiento?',
+    'respuesta' => 'Está diseñada para ofrecer una fijación estable durante rutinas intensas, movimiento y sudor. Para una mejor adhesión, aplícala siempre sobre piel limpia, seca y sin crema.'
   ],
   [
     'num' => '04',
-    'pregunta' => '¿Se nota al instante?',
-    'respuesta' => 'La mayoría de usuarios notan la diferencia en los primeros minutos — más aire, menos resistencia nasal y mayor comodidad respiratoria desde el primer uso.'
+    'pregunta' => '¿Se puede usar para dormir?',
+    'respuesta' => 'También puedes usarla durante el descanso si te resulta cómoda. NASPRO no está diseñada para tratar problemas respiratorios o del sueño; es una tira nasal de uso personal enfocada en comodidad y bienestar.'
   ],
   [
     'num' => '05',
-    'pregunta' => '¿Se puede usar para dormir?',
-    'respuesta' => 'Sí, es perfecta para el descanso. Mejora el flujo de aire nasal durante la noche, favoreciendo una respiración más profunda y un sueño más reparador.'
+    'pregunta' => '¿Duele al retirarla?',
+    'respuesta' => 'Retírala despacio desde los extremos, sin tirar de golpe. Si notas demasiada adherencia, puedes humedecer ligeramente la zona para retirarla con más suavidad.'
   ],
   [
     'num' => '06',
-    'pregunta' => '¿Es apto para pieles sensibles?',
-    'respuesta' => 'Sí. Los materiales de NASPRO han sido seleccionados para minimizar la irritación. Si tienes piel muy reactiva, te recomendamos hacer una prueba en una zona pequeña antes del primer uso completo.'
+    'pregunta' => '¿Se puede reutilizar?',
+    'respuesta' => 'No. Cada tira está diseñada para un solo uso, para mantener una buena fijación, higiene y comodidad durante la aplicación.'
   ],
 ];
 ?>
