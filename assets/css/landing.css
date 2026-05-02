@@ -2624,7 +2624,11 @@ body.naspro-menu-open .naspro-burger__btn {
   font-size: clamp(2rem, 4vw, 3.2rem) !important;
   font-weight: 400 !important;
   letter-spacing: 0.04em !important;
-  color: rgba(255,255,255,.90) !important;
+  background: linear-gradient(100deg, var(--naspro-cyan-soft) 0%, var(--naspro-ice) 60%, rgba(255,255,255,.9) 100%) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  color: transparent !important;
   text-align: center !important;
   margin: 0 0 clamp(28px, 4vw, 48px) !important;
   line-height: 1 !important;
@@ -2634,7 +2638,7 @@ body.naspro-menu-open .naspro-burger__btn {
   display: grid !important;
   grid-template-columns: repeat(3, 1fr) !important;
   gap: clamp(14px, 2vw, 24px) !important;
-  align-items: start !important;
+  align-items: stretch !important;
 }
 
 .ts-card {
