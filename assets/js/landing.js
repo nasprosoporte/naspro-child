@@ -231,3 +231,53 @@
 
   targets.forEach(function(el) { observer.observe(el); });
 })();
+
+// Testimonios — animación entrada + dots carrusel móvil
+(function() {
+  var cards = document.querySelectorAll('.ts-card');
+  if (!cards.length) return;
+
+  if (!('IntersectionObserver' in window)) {
+    cards.forEach(function(card) { card.classList.add('is-visible'); });
+    return;
+  }
+
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  cards.forEach(function(card) { observer.observe(card); });
+
+  var grid = document.querySelector('.ts-grid');
+  var dots = document.querySelectorAll('.ts-dot');
+  if (!grid || !dots.length) return;
+
+  var dotObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        var idx = entry.target.getAttribute('data-dot');
+        dots.forEach(function(d) { d.classList.remove('ts-dot--active'); });
+        if (dots[idx]) dots[idx].classList.add('ts-dot--active');
+      }
+    });
+  }, { root: grid, threshold: 0.5 });
+
+  cards.forEach(function(card, i) {
+    card.setAttribute('data-dot', i);
+    dotObserver.observe(card);
+  });
+
+  dots.forEach(function(dot) {
+    dot.addEventListener('click', function() {
+      var idx = parseInt(dot.getAttribute('data-index'), 10);
+      if (cards[idx]) {
+        cards[idx].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+      }
+    });
+  });
+})();
