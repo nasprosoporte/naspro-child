@@ -38,7 +38,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
       <div class="nx-tag" id="tag2">
         <span class="nx-tag__num">02</span>
         <h4>Tiras elásticas</h4>
-        <p>Controlan la expansión nasal con precisión milimétrica para maximizar el flujo de aire.</p>
+        <p>Controlan la tensión nasal con precisión milimétrica para aportar una sensación de mayor flujo de aire.</p>
       </div>
     </div>
 
