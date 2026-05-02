@@ -34,7 +34,7 @@ return [
             'Ajuste estable durante el uso',
         ],
         'cta'         => 'Comprar ahora',
-        'shopify_url' => 'https://tienda.naspro.es/products/naspro-sport-30-tiras-nasales',
+        'shopify_url' => 'https://tienda.naspro.es/products/naspro-sport-30-tiras-nasales?variant=55610136920404',
     ],
 
     /* ─────────────────────────────────────────────
@@ -55,7 +55,7 @@ return [
             'Perfecto para repetir o compartir',
         ],
         'cta'         => 'Comprar Pack',
-        'shopify_url' => 'https://tienda.naspro.es/products/pack-duo-naspro-60-tiras-nasales',
+        'shopify_url' => 'https://tienda.naspro.es/products/pack-duo-naspro-60-tiras-nasales?variant=55610427965780',
     ],
 
     /* ─────────────────────────────────────────────
