@@ -76,7 +76,7 @@ return [
             'Pago único de 29,97€',
         ],
         'cta'         => 'Suscribirme',
-        'shopify_url' => '#',
+        'shopify_url' => 'https://tienda.naspro.es/products/suscripcion-mensual-naspro-3-meses',
     ],
 
 ];
