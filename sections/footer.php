@@ -26,8 +26,8 @@ if ( ! defined( 'ABSPATH' ) ) exit;
           <span class="ft-col__title">Contacto</span>
           <a href="mailto:info@naspro.es">info@naspro.es</a>
           <div class="ft-social">
-            <a href="https://instagram.com/naspro" target="_blank" rel="noopener">Instagram</a>
-            <a href="https://tiktok.com/@naspro" target="_blank" rel="noopener">TikTok</a>
+            <a href="https://instagram.com/naspro_oficial" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://tiktok.com/@naspro_oficial" target="_blank" rel="noopener">TikTok</a>
           </div>
         </div>
       </div>
