@@ -80,7 +80,7 @@ $productos = include get_stylesheet_directory() . '/config/products.php';
       </svg>
       <div>
         <strong>Envío rápido</strong>
-        <span>Recíbelo en pocos días</span>
+        <span>Recíbelo en 2 a 5 días hábiles</span>
       </div>
     </div>
 
